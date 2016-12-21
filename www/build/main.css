@@ -17542,7 +17542,7 @@ ion-navbar.toolbar {
 }
 
 .toolbar-title-ios {
-  font-size: 12px;
+  font-size: 1.7rem;
   font-weight: 600;
   text-align: center;
   color: #000;

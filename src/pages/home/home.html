@@ -9,6 +9,10 @@
     <ion-title >Nest Refreshed: 15th December 2016</ion-title>
   </ion-toolbar>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ion-list no-lines>
     <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="pokemon_list">
       <ion-thumbnail item-left>
