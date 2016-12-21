@@ -26,7 +26,7 @@ export class NestService {
         this.createAuthorizationHeader(headers);
 
         var query = 'include=pokemon';
-        var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/Nests?'+query;
+        var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/nests?'+query;
         var response = this.http.get(url, {
           headers: headers
         }).map(res => res.json());

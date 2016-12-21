@@ -14,12 +14,12 @@
   </ion-refresher>
 
   <ion-list no-lines>
-    <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="pokemon_list">
+    <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail item-left>
-        <img src="assets/pokemon/{{item.image}}">
+        <img src="assets/pokemon/{{nest.pokemon.image}}">
       </ion-thumbnail>
-      <h2>{{item.title}}</h2>
-      <p>{{item.location}}</p>
+      <h2>{{nest.pokemon.name}}</h2>
+      <p>{{nest.location_name}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

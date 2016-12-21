@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController} from 'ionic-angular';
-import { NestService } from '../services/NestService';
+import { NestService } from '../../services/NestService';
 
 @Component({
   selector: 'page-home',
@@ -11,22 +11,16 @@ export class HomePage {
 
   nests: [{}];
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestService: NestService) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService) {
+
+    // Initial data load
+    this.getNests();
 
   }
 
-  items = [{
-    "title":"Bulbasaur",
-    "image":"001 - ymJUN7U.png",
-    "location":"Highfields"
-  },{
-    "title":"Pikachu",
-    "image":"025 - BnOQ18z.png",
-    "location":"Woodthorpe Park"
-  }];
 
   getNests() {
-    this.nestService.listNests().subscribe(
+    this.nestServices.listNests().subscribe(
         data => {
             this.nests = data.results;
             console.log(data.results);
@@ -41,6 +35,7 @@ export class HomePage {
 
   doRefresh(refresher) {
      //console.log('Begin async operation', refresher);
+     this.getNests();
      setTimeout(() => {
        refresher.complete();
      }, 2000);
@@ -49,7 +44,7 @@ export class HomePage {
    showAlert(item) {
      let alert = this.alertCtrl.create({
        title: 'Woohoo!',
-       subTitle: 'You selected the title: '+item.title,
+       subTitle: 'You selected the title: '+item.pokemon.name,
        buttons: ['OK']
      });
      alert.present();
