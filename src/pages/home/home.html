@@ -1,17 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
+    <ion-title>Nests</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-toolbar class="last_nest_change">
+    <ion-title >Nest Refreshed: 15th December 2016</ion-title>
+  </ion-toolbar>
+
+  <ion-list no-lines>
+    <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)" class="pokemon_list">
+      <ion-thumbnail item-left>
+        <img src="assets/pokemon/{{item.image}}">
+      </ion-thumbnail>
+      <h2>{{item.title}}</h2>
+      <p>{{item.location}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

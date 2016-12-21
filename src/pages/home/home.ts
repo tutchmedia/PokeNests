@@ -12,4 +12,14 @@ export class HomePage {
 
   }
 
+  items = [{
+    "title":"Bulbasaur",
+    "image":"001 - ymJUN7U.png",
+    "location":"Highfields"
+  },{
+    "title":"Pikachu",
+    "image":"025 - BnOQ18z.png",
+    "location":"Woodthorpe Park"
+  }];
+
 }

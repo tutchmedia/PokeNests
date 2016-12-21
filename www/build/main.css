@@ -17542,7 +17542,7 @@ ion-navbar.toolbar {
 }
 
 .toolbar-title-ios {
-  font-size: 1.7rem;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   color: #000;
@@ -22107,4 +22107,16 @@ sub {
   .wp .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
     padding-top: calc(16px + 20px);
   }
+}
+
+page-about .pokemon_list img {
+  max-width: 60px;
+}
+
+page-home .pokemon_list img {
+  padding: 10px;
+}
+
+page-home .last_nest_change .toolbar-title {
+  font-size: 11px;
 }
