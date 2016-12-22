@@ -13,6 +13,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashMaintainAspectRatio" value="true"/>
   <preference name="FadeSplashScreenDuration" value="300"/>
+  <preference name="StatusBarStyle" value="lightcontent" />
   <icon src="resources\ios\icon\icon-small@3x.png"/>
   <splash src="Default-568h@2x~iphone.png" platform="ios" width="320" height="480"/>
   <allow-intent href="http://*/*"/>
