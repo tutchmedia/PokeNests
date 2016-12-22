@@ -5,15 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-toolbar class="last_nest_change">
-    <ion-title >Nest Refreshed: 15th December 2016</ion-title>
-  </ion-toolbar>
+
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-list no-lines>
+  <ion-list>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail item-left>
         <img src="assets/pokemon/{{nest.pokemon.image}}">

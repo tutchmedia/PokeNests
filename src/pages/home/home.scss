@@ -1,6 +1,14 @@
 page-home {
   .pokemon_list img {
-    padding: 10px;
+    padding: 20px;
+    width:inherit;
+  }
+  .pokemon_list {
+    border-bottom: 1px solid #e4e5ea;
+  }
+  .list-md .item-block .item-inner {
+    border-bottom: 0px;
+    color:242633;
   }
   .last_nest_change .toolbar-title {
     font-size: 11px ;

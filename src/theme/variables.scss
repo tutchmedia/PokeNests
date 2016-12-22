@@ -23,7 +23,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #FFFFFF,
+  primary:    #242633,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -32,6 +32,9 @@ $colors: (
 );
 
 $img-placeholder-background: #f8f8f8;
+$background-color: #FFFFFF;
+
+$toolbar-md-title-font-size: 12px;
 
 
 
