@@ -41,7 +41,7 @@ export class MyApp {
 
               this.nestServices.sendPushInstallation(data.registrationId).subscribe(
                   data => {
-                      
+
                       console.log(data.results);
                   },
                   err => {
@@ -65,6 +65,14 @@ export class MyApp {
           push.on('error', (e) => {
               console.log(e.message);
           });
+
+          push.setApplicationIconBadgeNumber(function() {
+              console.log('success');
+          }, function() {
+              console.log('error');
+          },0);
+
+
         }// end of IOS check
 
     });
