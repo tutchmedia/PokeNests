@@ -46,6 +46,20 @@ export class NestService {
 		    return response;
     }
 
+    sendPushInstallation(device_id) {
+
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      let p_data = {"deviceToken":device_id, "deviceType":"ios"};
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/installations/';
+      var response = this.http.post(url, {
+        headers: headers
+      }, p_data).map(res => res.json());
+      return response;
+
+    }
+
     registerUser(email: string, password: string, birthday?: any) {
       console.log('registering ' + email);
       var user = new Parse.User();

@@ -3,15 +3,17 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen, Push} from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { NestService } from '../services/NestService';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [NestService]
 })
 export class MyApp {
   rootPage = TabsPage;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, private nestServices: NestService) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -34,6 +36,20 @@ export class MyApp {
           });
 
           push.on('registration', (data) => {
+
+              // Send the device id
+
+              this.nestServices.sendPushInstallation(data.registrationId).subscribe(
+                  data => {
+                      
+                      console.log(data.results);
+                  },
+                  err => {
+                      console.log(err);
+                  },
+                  () => console.log('Games Search Complete')
+              );
+
               console.log(data.registrationId);
           });
 
