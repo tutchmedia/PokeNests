@@ -1,11 +1,7 @@
 page-contact {
-  .center img {
-    position:absolute;
-    left: 0;
-    right: 0;
-    margin:0 auto;
-    top:50%;
-    transform:translateY(-50%);
+  .center{
+    text-align: center;
+    background-color: #f8f8f8;
   }
   .last_nest_change .toolbar-title {
     font-size:11px;
