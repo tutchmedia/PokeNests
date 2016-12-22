@@ -43,7 +43,7 @@ export class ContactPage {
     );
   }
 
-
+  /*
   // Load and init the map
   ngAfterViewInit() {
    this.loadMap();
@@ -87,5 +87,6 @@ export class ContactPage {
           marker.showInfoWindow();
         });
   }
+  */
 
 }
