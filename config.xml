@@ -40,4 +40,5 @@
     <variable name="SENDER_ID" value="YOUR_SENDER_ID"/>
   </plugin>
   <gap:plugin name="cordova-plugin-local-notifications-mm" source="npm" />
+  <plugin name="cordova-plugin-googlemaps" spec="https://github.com/mapsplugin/cordova-plugin-googlemaps.git"></plugin>
 </widget>
