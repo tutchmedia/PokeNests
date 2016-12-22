@@ -5,8 +5,10 @@
   <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
   <content src="index.html"/>
   <access origin="*"/>
-  <icon src="icon.png"/>
+  <preference name="prerendered-icon" value="true"/>
+  <icon src="icon.png" gap:role="default" />
   <icon src="icon-60@3x.png" platform="ios" width="180" height="180" />
+  <splash src="Default-568h@2x~iphone.png" platform="ios" width="320" height="480" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
