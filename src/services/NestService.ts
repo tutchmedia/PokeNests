@@ -33,6 +33,19 @@ export class NestService {
 		    return response;
     }
 
+    listNestDetails(id) {
+
+        let headers = new Headers();
+        this.createAuthorizationHeader(headers);
+
+        var query = 'include=pokemon';
+        var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/nests/'+id+'?'+query;
+        var response = this.http.get(url, {
+          headers: headers
+        }).map(res => res.json());
+		    return response;
+    }
+
     registerUser(email: string, password: string, birthday?: any) {
       console.log('registering ' + email);
       var user = new Parse.User();

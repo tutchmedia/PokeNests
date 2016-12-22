@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController} from 'ionic-angular';
+
+// Other pages
+import { ContactPage } from '../contact/contact';
+
+// Services
 import { NestService } from '../../services/NestService';
 
 @Component({
@@ -51,7 +56,10 @@ export class HomePage {
    }
 
    itemSelected(item) {
-     this.showAlert(item);
+     //this.showAlert(item);
+     this.navCtrl.push(ContactPage, {
+        "nest_id": item.objectId
+      });
    }
 
 }

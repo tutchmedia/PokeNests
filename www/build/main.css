@@ -10040,7 +10040,7 @@ ion-img {
   display: inline-block;
   min-width: 20px;
   min-height: 20px;
-  background: #eee;
+  background: #f8f8f8;
   contain: strict;
 }
 
@@ -22111,6 +22111,29 @@ sub {
 
 page-about .pokemon_list img {
   max-width: 60px;
+}
+
+page-contact .center img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+page-contact .last_nest_change .toolbar-title {
+  font-size: 11px;
+  text-align: center;
+}
+
+page-contact .pokemon_info {
+  padding: 10px;
+}
+
+page-contact .no_top {
+  margin-top: -5px;
 }
 
 page-home .pokemon_list img {
