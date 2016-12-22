@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen, Push} from 'ionic-native';
+import { StatusBar, Splashscreen, Push, LocalNotifications} from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { NestService } from '../services/NestService';
@@ -66,11 +66,7 @@ export class MyApp {
               console.log(e.message);
           });
 
-          push.setApplicationIconBadgeNumber(function() {
-              console.log('success');
-          }, function() {
-              console.log('error');
-          },0);
+          LocalNotifications.clearAll();
 
 
         }// end of IOS check
