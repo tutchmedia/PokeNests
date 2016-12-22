@@ -16,6 +16,7 @@ export class NestService {
     createAuthorizationHeader(headers: Headers) {
       headers.append('X-Parse-Application-Id','7iqBN0vAzR7dVUr4SFY4O6kKasPSVmiCNDJVPSSm');
       headers.append('X-Parse-REST-API-Key', 'kRpwLQ1BAd85ow635D7bDQOhSADsViCSmPi5SVzP');
+      headers.append('Content-Type', 'application/json');
 
     }
 
@@ -51,11 +52,11 @@ export class NestService {
       let headers = new Headers();
       this.createAuthorizationHeader(headers);
 
-      let p_data = {"deviceToken":device_id, "deviceType":"ios"};
+      let p_data = {"deviceToken":device_id, "deviceType":"ios", "channels": [""]};
       var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/installations/';
-      var response = this.http.post(url, {
+      var response = this.http.post(url, p_data, {
         headers: headers
-      }, p_data).map(res => res.json());
+      }).map(res => res.json());
       return response;
 
     }
