@@ -30,7 +30,7 @@ export class MyApp {
               ios: {
                   alert: "true",
                   badge: true,
-                  sound: 'false'
+                  sound: true
               },
               windows: {}
           });
@@ -47,7 +47,7 @@ export class MyApp {
                   err => {
                       console.log(err);
                   },
-                  () => console.log('Games Search Complete')
+                  () => console.log('Installation ID Complete')
               );
 
               console.log(data.registrationId);
