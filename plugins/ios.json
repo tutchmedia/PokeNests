@@ -22,7 +22,7 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.pokenests238291"
         },
-        "de.appplant.cordova.plugin.local-notification": {
+        "cordova-plugin-local-notifications-mm": {
             "PACKAGE_NAME": "com.ionicframework.pokenests238291"
         }
     },

@@ -65,12 +65,10 @@
         "is_top_level": false,
         "variables": {}
     },
-    "de.appplant.cordova.plugin.local-notification": {
+    "cordova-plugin-local-notifications-mm": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/katzer/cordova-plugin-local-notifications",
-            "subdir": ".",
-            "ref": "ios10"
+            "type": "registry",
+            "id": "cordova-plugin-local-notifications-mm"
         },
         "is_top_level": true,
         "variables": {}
