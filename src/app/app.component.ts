@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen, Push, LocalNotifications} from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { NestService } from '../services/NestService';
+import { LoginPage } from '../pages/login/login';
 
 
 @Component({
