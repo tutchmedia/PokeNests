@@ -1,6 +1,12 @@
 <ion-header>
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>Nests</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="presentModal()">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -12,6 +18,9 @@
   </ion-refresher>
 
   <ion-list>
+    <ion-list-header>
+      Nottingham
+    </ion-list-header>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail item-left>
         <img src="assets/pokemon/{{nest.pokemon.image}}">

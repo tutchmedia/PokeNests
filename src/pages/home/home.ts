@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, AlertController} from 'ionic-angular';
+import { NavController, LoadingController, AlertController, ModalController} from 'ionic-angular';
 
 // Other pages
 import { ContactPage } from '../contact/contact';
+import { LocationPage } from '../location/location';
 
 // Services
 import { NestService } from '../../services/NestService';
@@ -16,11 +17,17 @@ export class HomePage {
 
   nests: [{}];
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController) {
 
     // Initial data load
     this.getNests();
 
+  }
+
+
+  presentModal() {
+    let modal = this.modalCtrl.create(LocationPage);
+    modal.present();
   }
 
 
