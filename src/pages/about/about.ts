@@ -21,7 +21,8 @@ export class AboutPage {
       let checkLogin = this.auth.getUserInfo();
       if(checkLogin == undefined) {
         console.log("not logged in..");
-        this.nav.push(LoginPage);
+        //this.nav.push(LoginPage);
+        this.nav.setRoot(LoginPage);
       } else {
         // Do stuff once logged in
         let info = this.auth.getUserInfo();
