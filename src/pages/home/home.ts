@@ -18,26 +18,29 @@ export class HomePage {
 
   nests: [{}];
   location_name = "";
+  location = [{}];
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController, storage: Storage) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController,public storage: Storage) {
 
     // Initial data load
 
 
+  }
 
-    // Check for location setting
 
-    storage.get('location').then((val) => {
+  ionViewDidEnter() {
+
+    this.storage.get('location').then((val) => {
         if(val == null) {
           console.log("No location set!");
           this.location_name = "No location set.";
         } else {
           // Location set, get the data
           this.location_name = val.city;
+          this.location = val;
           this.getNests();
         }
      })
-
   }
 
 
@@ -48,7 +51,7 @@ export class HomePage {
 
 
   getNests() {
-    this.nestServices.listNests().subscribe(
+    this.nestServices.listNests(this.location).subscribe(
         data => {
             this.nests = data.results;
             console.log(data.results);

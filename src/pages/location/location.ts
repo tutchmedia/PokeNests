@@ -19,8 +19,8 @@ import { NestService } from '../../services/NestService';
 })
 export class LocationPage {
 
-  locations = [];
-  select_location = [];
+  locations = [{}];
+  select_location = [{}];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private nestServices: NestService, public storage: Storage) {
@@ -58,7 +58,7 @@ export class LocationPage {
 
 
   save() {
-    this.storage.set('location', this.locations);
+    this.storage.set('location', this.select_location);
     this.viewCtrl.dismiss();
   }
 

@@ -31,7 +31,7 @@
     <ion-list-header>
       Available Locations
     </ion-list-header>
-      <ion-item *ngFor="let item of locations;let i=index">
+      <ion-item *ngFor="let item of locations">
         <ion-label>{{item.city}}</ion-label>
         <ion-radio [value]="item"></ion-radio>
       </ion-item>

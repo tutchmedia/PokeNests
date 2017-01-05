@@ -1,5 +1,7 @@
 import {Http, Headers} from '@angular/http';
 import 'rxjs/Rx';
+import { Storage } from '@ionic/storage';
+
 
 declare let Parse: any;
 
@@ -7,6 +9,8 @@ export class NestService {
     static get parameters() {
         return [[Http]];
     }
+
+    location_name = [{}];
 
     constructor(private http:Http) {
 
@@ -21,12 +25,15 @@ export class NestService {
     }
 
 
-    listNests() {
+    listNests(loc) {
 
         let headers = new Headers();
         this.createAuthorizationHeader(headers);
 
-        var query = 'include=pokemon&where={"location_cat":{"__type":"Pointer","className":"locations","objectId":"KsbPoGUJHJ"}}';
+
+
+        var query = 'include=pokemon&where={"location_cat":{"__type":"Pointer","className":"locations","objectId":"'+loc.objectId+'"}}';
+        console.log(query);
         var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/nests?'+query;
         var response = this.http.get(url, {
           headers: headers
