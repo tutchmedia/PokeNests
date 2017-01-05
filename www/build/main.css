@@ -24443,7 +24443,7 @@ page-home .last_nest_change .toolbar-title {
 }
 
 page-login .login-content {
-  background: #56CA96;
+  background: #196D79;
 }
 
 page-login .login-content .logo-row {
@@ -24452,8 +24452,6 @@ page-login .login-content .logo-row {
 }
 
 page-login .login-content .login-box {
-  background: #399F8B;
-  padding: 20px 20px 0px 20px;
   margin-top: 30px;
 }
 
@@ -24466,8 +24464,6 @@ page-login .login-content ion-row {
 }
 
 page-login .login-content ion-item {
-  border-radius: 30px !important;
-  padding-left: 30px !important;
   font-size: 0.9em;
   margin-bottom: 10px;
   border: 1px solid #ffffff;
@@ -24486,8 +24482,8 @@ page-login .login-content .item-inner {
 }
 
 page-login .login-content .submit-btn {
-  background: #51CFB1;
-  border-radius: 30px !important;
+  background: #ffffff;
+  color: #000000;
   border: 1px solid #ffffff;
 }
 
