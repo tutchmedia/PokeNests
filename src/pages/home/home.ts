@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController, ModalController} from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 // Other pages
 import { ContactPage } from '../contact/contact';
@@ -16,11 +17,26 @@ import { NestService } from '../../services/NestService';
 export class HomePage {
 
   nests: [{}];
+  location_name = "";
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController, storage: Storage) {
 
     // Initial data load
-    this.getNests();
+
+
+
+    // Check for location setting
+
+    storage.get('location').then((val) => {
+        if(val == null) {
+          console.log("No location set!");
+          this.location_name = "No location set.";
+        } else {
+          // Location set, get the data
+          this.location_name = val.city;
+          this.getNests();
+        }
+     })
 
   }
 
