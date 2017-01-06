@@ -29,7 +29,17 @@ export class HomePage {
 
 
   ionViewDidEnter() {
+    console.log("Did Enter");
+  }
 
+
+  ionViewWillEnter() {
+    console.log("Will Enter");
+    this.getPageData();
+  }
+
+
+  getPageData() {
     this.storage.get('location').then((val) => {
         if(val == null) {
           console.log("No location set!");

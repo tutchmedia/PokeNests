@@ -4,12 +4,13 @@ import { StatusBar, Splashscreen, Push, LocalNotifications} from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { NestService } from '../services/NestService';
+import { AuthService } from '../providers/auth-service';
 import { LoginPage } from '../pages/login/login';
 
 
 @Component({
   templateUrl: 'app.html',
-  providers: [NestService]
+  providers: [NestService, AuthService]
 })
 export class MyApp {
   rootPage = TabsPage;

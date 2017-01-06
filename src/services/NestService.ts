@@ -1,9 +1,20 @@
 import {Http, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import { Storage } from '@ionic/storage';
+import {Observable} from 'rxjs/Observable';
 
 
 declare let Parse: any;
+
+export class User {
+  name: string;
+  email: string;
+
+  constructor(name: string, email: string) {
+    this.name = name;
+    this.email = email;
+  }
+}
 
 export class NestService {
     static get parameters() {
@@ -11,8 +22,9 @@ export class NestService {
     }
 
     location_name = [{}];
+    currentUser: User;
 
-    constructor(private http:Http) {
+    constructor(private http:Http, public storage: Storage) {
 
     }
 
@@ -33,7 +45,6 @@ export class NestService {
 
 
         var query = 'include=pokemon&where={"location_cat":{"__type":"Pointer","className":"locations","objectId":"'+loc.objectId+'"}}';
-        console.log(query);
         var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/nests?'+query;
         var response = this.http.get(url, {
           headers: headers
@@ -46,7 +57,7 @@ export class NestService {
         let headers = new Headers();
         this.createAuthorizationHeader(headers);
 
-        var query = '';
+        var query = 'order=city';
         var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/locations?'+query;
         var response = this.http.get(url, {
           headers: headers
@@ -81,6 +92,49 @@ export class NestService {
 
     }
 
+
+    restLogin(username: string, password: string) {
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      var query = 'username='+username+'&password='+password;
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/login?'+query;
+      var response = this.http.get(url, {
+        headers: headers
+      }).map(res => res.json());
+
+      return response;
+
+
+    }
+
+    public getUserInfo(user) {
+
+      if(user == undefined) {
+        return undefined;
+      } else {
+        return user;
+      }
+
+    }
+
+    loginUser(username: string, password: string) {
+      var user = new Parse.User();
+      user.set("username", username);
+      user.set("password", password);
+
+
+      user.logIn(null, {
+        success: function (user) {
+          console.log('success');
+        },
+        error: function (user, error) {
+          // Show the error message somewhere and let the user try again.
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+
     registerUser(email: string, password: string, birthday?: any) {
       console.log('registering ' + email);
       var user = new Parse.User();
@@ -99,6 +153,14 @@ export class NestService {
           // Show the error message somewhere and let the user try again.
           alert("Error: " + error.code + " " + error.message);
         }
+      });
+    }
+
+    public logout() {
+      return Observable.create(observer => {
+        this.currentUser = null;
+        observer.next(true);
+        observer.complete();
       });
     }
 

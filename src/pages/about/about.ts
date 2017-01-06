@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import { AuthService } from '../../providers/auth-service';
+import { NestService } from '../../services/NestService';
 import { LoginPage } from '../login/login';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-about',
@@ -10,30 +11,46 @@ import { LoginPage } from '../login/login';
 
 export class AboutPage {
 
-  username = '';
-  email = '';
+  currentUser = [{}];
 
-  constructor(private nav: NavController, private auth: AuthService) {
+  constructor(private nav: NavController, private nestService: NestService, private storage: Storage) {
 
   }
 
   ionViewDidEnter() {
-      let checkLogin = this.auth.getUserInfo();
-      if(checkLogin == undefined) {
-        console.log("not logged in..");
-        //this.nav.push(LoginPage);
-        this.nav.setRoot(LoginPage);
-      } else {
-        // Do stuff once logged in
-        let info = this.auth.getUserInfo();
-        this.username = info.name;
-        this.email = info.email;
-      }
+
+    this.storage.get('currentUser').then((val) => {
+        if(val == null) {
+          this.nav.setRoot(LoginPage)
+          console.log("No user set.");
+        } else {
+          let checkLogin = this.nestService.getUserInfo(val);
+
+          if(checkLogin == undefined) {
+            console.log("not logged in..");
+            //this.nav.push(LoginPage);
+            this.nav.setRoot(LoginPage);
+          } else {
+            // Do stuff once logged in
+            let info = this.nestService.getUserInfo(val);
+            this.currentUser = info;
+          }
+
+
+        }
+     });
+
+
+
+
+
   }
 
 
   public logout() {
-    this.auth.logout().subscribe(succ => {
+    this.nestService.logout().subscribe(succ => {
+        // Remove the currentUser storage
+        this.storage.remove("currentUser");
         this.nav.setRoot(LoginPage)
     });
   }

@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
-import { AuthService } from '../../providers/auth-service';
+//import { AuthService } from '../../providers/auth-service';
+import { NestService } from '../../services/NestService';
 import { RegisterPage } from '../register/register';
 import { AboutPage } from '../about/about';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
+  providers: [NestService]
 })
 export class LoginPage {
   loading: Loading;
-  registerCredentials = {email: '', password: ''};
+  registerCredentials = {username: '', password: ''};
 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
+  constructor(private nav: NavController, private auth: NestService, private alertCtrl: AlertController, private loadingCtrl: LoadingController, private storage: Storage) {}
 
   public createAccount() {
     this.nav.push(RegisterPage);
@@ -20,14 +23,20 @@ export class LoginPage {
 
   public login() {
     this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {
+    this.auth.restLogin(this.registerCredentials.username, this.registerCredentials.password).subscribe(allowed => {
+
+
+
+      if (allowed.username) {
+
+        this.storage.set('currentUser', allowed);
+
         setTimeout(() => {
-        this.loading.dismiss();
-        this.nav.setRoot(AboutPage)
+          this.loading.dismiss();
+          this.nav.setRoot(AboutPage)
         });
       } else {
-        this.showError("Access Denied");
+        this.showError(allowed.error);
       }
     },
     error => {

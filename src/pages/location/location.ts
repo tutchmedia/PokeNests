@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,  ViewController  } from 'ionic-angular';
+import { App, NavController, NavParams,  ViewController, Tabs} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+// other pages
+import { HomePage } from '../home/home';
 
 // Services
 import { NestService } from '../../services/NestService';
@@ -23,7 +25,7 @@ export class LocationPage {
   select_location = [{}];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private nestServices: NestService, public storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private nestServices: NestService, public storage: Storage, private app: App) {
 
     this.nestServices.listLocations().subscribe(
         data => {
@@ -52,14 +54,14 @@ export class LocationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LocationPage');
 
-
-
   }
 
 
   save() {
     this.storage.set('location', this.select_location);
     this.viewCtrl.dismiss();
+
+    this.app.getRootNav().getActiveChildNav().select(0);
   }
 
   dismiss() {
