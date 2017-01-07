@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
+  <ion-navbar [color]="'primary'">
     <ion-title>
       My Account
     </ion-title>
@@ -11,7 +11,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
-  <h3>Welcome, {{currentUser.first_name}} {{currentUser.last_name}}!</h3>
-  Your Email is: {{email}}
+<ion-content padding class="about-content">
+  <h3>Welcome back</h3>
+  <h2>{{currentUser.first_name}} {{currentUser.last_name}}</h2>
+
+
 </ion-content>
