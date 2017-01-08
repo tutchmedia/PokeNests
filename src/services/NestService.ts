@@ -53,6 +53,40 @@ export class NestService {
     }
 
 
+    checkInLocation(user, location) {
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      let p_data = {"user":{ "__type": "Pointer", "className":"_User","objectId": user}, "nest":{ "__type": "Pointer", "className":"nests","objectId": location}};
+      //let p_data = {"user":user, "location":location};
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/checked_in/';
+      var response = this.http.post(url, p_data, {
+        headers: headers
+      }).map(res => res.json());
+      return response;
+    }
+
+    // Do check in
+    getCheckedIn(location) {
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      // Current time + 1
+
+      var dateToday = new Date();
+      dateToday.setMinutes(dateToday.getMinutes() - 30);
+      let check_date = dateToday.toISOString();
+      console.log(check_date);
+
+      var query = 'where={"nest":{"__type":"Pointer","className":"nests", "objectId":"'+location+'"},"createdAt":{"$gt":{"__type":"Date","iso":"'+check_date+'"}}}';
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/checked_in?'+query;
+      var response = this.http.get(url, {
+        headers: headers
+      }).map(res => res.json());
+      return response;
+    }
+
+
     listLocations() {
         let headers = new Headers();
         this.createAuthorizationHeader(headers);
