@@ -69,6 +69,7 @@
   </plugin>
   <plugin name="cordova-plugin-googlemaps" spec="https://github.com/mapsplugin/cordova-plugin-googlemaps.git">
     <variable name="API_KEY_FOR_IOS" value="AIzaSyAfLYAg9fi-6Q9sLC19Yuv5gBa8wokDiZs"/>
+    <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAfLYAg9fi-6Q9sLC19Yuv5gBa8wokDiZs"/>
   </plugin>
   <gap:plugin name="cordova-plugin-local-notifications-mm" source="npm"/>
 </widget>
