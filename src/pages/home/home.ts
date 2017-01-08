@@ -64,7 +64,6 @@ export class HomePage {
     this.nestServices.listNests(this.location).subscribe(
         data => {
             this.nests = data.results;
-            console.log(data.results);
         },
         err => {
             console.log(err);

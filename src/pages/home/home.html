@@ -23,7 +23,7 @@
     </ion-list-header>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail item-left>
-        <img src="assets/pokemon/{{nest.pokemon.image}}">
+        <img src="assets/pokemon/{{nest.pokemon.number}}.png">
       </ion-thumbnail>
       <h2>{{nest.pokemon.name}}</h2>
       <p>{{nest.location_name}}</p>
