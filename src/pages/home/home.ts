@@ -14,6 +14,7 @@ import { NestService } from '../../services/NestService';
   templateUrl: 'home.html',
   providers: [NestService]
 })
+
 export class HomePage {
 
   nests: [{}];
@@ -25,11 +26,6 @@ export class HomePage {
     // Initial data load
 
 
-  }
-
-
-  ionViewDidEnter() {
-    console.log("Did Enter");
   }
 
 
@@ -64,6 +60,7 @@ export class HomePage {
     this.nestServices.listNests(this.location).subscribe(
         data => {
             this.nests = data.results;
+            this.nests.sort();
         },
         err => {
             console.log(err);

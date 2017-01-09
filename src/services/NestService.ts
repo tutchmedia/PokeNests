@@ -44,7 +44,7 @@ export class NestService {
 
 
 
-        var query = 'include=pokemon&where={"location_cat":{"__type":"Pointer","className":"locations","objectId":"'+loc.objectId+'"}}';
+        var query = 'include=pokemon&where={"location_cat":{"__type":"Pointer","className":"locations","objectId":"'+loc.objectId+'"}}&order=pokemon';
         var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/nests?'+query;
         var response = this.http.get(url, {
           headers: headers
