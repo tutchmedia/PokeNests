@@ -112,6 +112,20 @@ export class NestService {
 		    return response;
     }
 
+
+    listNestNotes(id) {
+
+        let headers = new Headers();
+        this.createAuthorizationHeader(headers);
+
+        var query = 'include=_User&where={"nest":{"__type":"Pointer","className":"nests","objectId":"'+id+'"}}';
+        var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/notes?'+query;
+        var response = this.http.get(url, {
+          headers: headers
+        }).map(res => res.json());
+		    return response;
+    }
+
     sendPushInstallation(device_id) {
 
       let headers = new Headers();

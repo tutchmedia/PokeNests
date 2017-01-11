@@ -26,6 +26,7 @@ export class ContactPage {
 
   item = 0;
   nest = [{}];
+  notes = [{}];
   pokemon = [{}];
   checkedIn = 0;
   checkInText = "people";
@@ -68,7 +69,8 @@ export class ContactPage {
 
     if(view == "showNotes")
     {
-
+      this.item = this.params.get('nest_id');
+      this.getNotes(this.item);
       // Show page
       this.showNotes = true;
       this.showInfo = false;
@@ -263,6 +265,18 @@ export class ContactPage {
             console.log(err);
         },
         () => console.log('Games Search Complete')
+    );
+  }
+
+  getNotes(nest_id) {
+    this.nestServices.listNestNotes(nest_id).subscribe(
+        data => {
+            this.notes = data;
+        },
+        err => {
+            console.log(err);
+        },
+        () => console.log('Notes Search Complete')
     );
   }
 

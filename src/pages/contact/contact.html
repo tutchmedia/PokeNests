@@ -51,9 +51,13 @@
 
   <!-- Notes View -->
   <div class="notes_view" [hidden]="!showNotes">
-    <div class="padding">
-      <small>Coming Soon</small>
-    </div>
+
+    <ion-list>
+      <ion-item ion-item *ngFor="let note of notes">
+        <p>{{note.comment}}</p>
+      </ion-item>
+    </ion-list>
+
   </div>
 
 </ion-content>
