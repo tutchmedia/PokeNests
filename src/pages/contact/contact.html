@@ -12,25 +12,48 @@
 </ion-header>
 
 <ion-content>
+  <ion-segment color="primary" [(ngModel)]="innerTab">
+    <ion-segment-button value="infoView" (ionSelect)="changePage('showInfo')">
+      Info
+    </ion-segment-button>
+    <ion-segment-button value="mapView" (ionSelect)="changePage('showMap')">
+      Map
+    </ion-segment-button>
+    <ion-segment-button value="notesView" (ionSelect)="changePage('showNotes')">
+      Notes
+    </ion-segment-button>
+  </ion-segment>
 
-  <ion-toolbar class="last_nest_change">
-    <ion-title>{{checkedIn}} people have been here.</ion-title>
-  </ion-toolbar>
+  <!-- Info View -->
+  <div class="info_view" [hidden]="!showInfo">
+    <ion-toolbar class="last_nest_change">
+      <ion-title>{{checkedIn}} {{checkInText}} been here.</ion-title>
+    </ion-toolbar>
 
 
-  <div class="padding center">
-    <ion-img width="120" height="180" src="./assets/pokemon/{{pokemon.number}}.png"></ion-img>
+    <div class="padding center p_image">
+      <ion-img width="80" height="80" src="./assets/pokemon/{{pokemon.number}}.png"></ion-img>
+    </div>
+
+    <ion-toolbar class="no_top">
+      <ion-title>{{nest.location_name}}</ion-title>
+    </ion-toolbar>
+
+    <div class="pokemon_info padding">
+      {{pokemon.about}}
+    </div>
   </div>
 
-  <ion-toolbar class="no_top">
-    <ion-title>{{nest.location_name}}</ion-title>
-  </ion-toolbar>
-
-  <div class="pokemon_info padding">
-    {{pokemon.about}}
+  <!-- Map View -->
+  <div class="map_view" [hidden]="!showMap" >
+    <div #map id="map"></div>
   </div>
 
-  <div id="map"></div>
-
+  <!-- Notes View -->
+  <div class="notes_view" [hidden]="!showNotes">
+    <div class="padding">
+      <small>Coming Soon</small>
+    </div>
+  </div>
 
 </ion-content>

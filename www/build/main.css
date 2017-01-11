@@ -26963,9 +26963,26 @@ page-about .pokemon_list img {
   max-width: 60px;
 }
 
+page-about .about-content {
+  text-align: center;
+}
+
+page-about .about-content h2 {
+  text-align: center;
+}
+
 page-contact .center {
   text-align: center;
   background-color: #f8f8f8;
+}
+
+page-contact .p_image {
+  text-align: center;
+}
+
+page-contact .p_image img {
+  height: 80px;
+  display: inline;
 }
 
 page-contact .last_nest_change .toolbar-title {
@@ -26981,9 +26998,32 @@ page-contact .no_top {
   margin-top: -5px;
 }
 
+page-contact .scroll-content {
+  height: 100%;
+}
+
+page-contact #map {
+  width: 100%;
+  height: 500px;
+}
+
+page-home .pokemon_list {
+  padding-left: 5px !important;
+}
+
+page-home .item-md [item-left] {
+  margin: 0px !important;
+}
+
+page-home .pokemon_list .home_image {
+  text-align: center;
+  padding-top: 15px;
+}
+
 page-home .pokemon_list img {
-  padding: 5px;
+  height: 50px;
   width: inherit;
+  display: inline;
 }
 
 page-home .pokemon_list {
@@ -26997,6 +27037,10 @@ page-home .list-md .item-block .item-inner {
 
 page-home .last_nest_change .toolbar-title {
   font-size: 11px;
+}
+
+page-home .home_header {
+  background-color: #f8f8f8;
 }
 
 page-login .login-content {

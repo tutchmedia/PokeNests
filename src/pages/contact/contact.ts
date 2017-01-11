@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {
@@ -7,12 +7,15 @@ import {
  GoogleMapsLatLng,
  CameraPosition,
  GoogleMapsMarkerOptions,
- GoogleMapsMarker
+ GoogleMapsMarker,
+ Geolocation
 } from 'ionic-native';
 // Services
 import { NestService } from '../../services/NestService';
 // Storage
 import { Storage } from '@ionic/storage';
+
+declare var google;
 
 @Component({
   selector: 'page-contact',
@@ -25,91 +28,166 @@ export class ContactPage {
   nest = [{}];
   pokemon = [{}];
   checkedIn = 0;
+  checkInText = "people";
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+
+
+
+  // Default view
+  innerTab = "";
+  showInfo = true;
+  showMap = false;
+  showNotes = false;
 
   constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage) {
+
     this.item = this.params.get('nest_id');
 
-    this.getNests(this.item);
+    this.changePage('showInfo');
+    this.innerTab = "infoView";
+
   }
 
-  parseISO(s) {
-    s = s.split(/\D/);
-    return new Date(Date.UTC(s[0],--s[1],s[2],s[3],s[4],s[5],s[6]));
+  ngAfterViewInit() {
+        console.log('on after view init', this.mapElement);
+        // this returns null
+    }
+
+
+  changePage(view) {
+    console.log(view);
+    if(view == "showMap")
+    {
+      this.loadTheMap(this.nest);
+      // Show page
+      this.showMap = true;
+      this.showInfo = false;
+      this.showNotes = false;
+    }
+
+    if(view == "showNotes")
+    {
+
+      // Show page
+      this.showNotes = true;
+      this.showInfo = false;
+      this.showMap = false;
+    }
+
+    if(view == "showInfo")
+    {
+      this.item = this.params.get('nest_id');
+      this.getNests(this.item);
+      // Show page
+      this.showInfo = true;
+      this.showMap = false;
+      this.showNotes = false;
+    }
+
+  }
+
+  loadMap(lat, lng){
+    let latLng = new google.maps.LatLng(lat, lng);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
   }
 
   ionViewDidEnter() {
     this.getCheckedIn();
   }
 
-  checkIn() {
-    // Pre check to see if already init a check in
 
-
-    var dateToday = new Date();
-    dateToday.setMinutes(dateToday.getMinutes() + 30);
-    let check_date = dateToday.toISOString();
-
-    let location_id = this.params.get('nest_id');
-    let checkIn = [{"location":location_id, "time":check_date}];
-
-    this.storage.get('lastCheckIn').then((val) => {
-        if(val == null)
-        {
-          // Set the location
-          this.storage.set('lastCheckIn', checkIn);
+  doCheckIn(checkIn) {
+    this.storage.get('currentUser').then((val) => {
+        if(val == null) {
+          console.log("No user set - Needs to login ");
+          let alert = this.alertController.create({
+            title: 'Not logged in!',
+            subTitle: 'In order to check in to a location, you must be logged in.',
+            buttons: ['OK']
+          });
+          alert.present(prompt);
         } else {
-          // Do a check againt the value for the time and check it wasn't in the last hour
+          console.log("User set and able to check in");
+          let user_id = val.objectId;
+          let location_id = this.params.get('nest_id');
+            this.nestServices.checkInLocation(user_id, location_id).subscribe(
+              data => {
 
-          var dateToday1 = new Date();
-          dateToday1.setMinutes(dateToday1.getMinutes() + 30);
-          let check_date1 = dateToday1.toISOString();
+                  this.storage.set('lastCheckIn', checkIn);
 
-
-          let dbdate = new Date(val[0].time).getTime();
-          console.log(dateToday1.getTime());
-
-          if(dbdate < dateToday1.getTime()) {
-            let alert = this.alertController.create({
-              title: 'Unable to check in',
-              subTitle: 'It appears you are already checked in here.',
-              buttons: ['OK']
-            });
-            alert.present(prompt);
-          } else {
-            // Check the user in
-            this.storage.get('currentUser').then((val) => {
-                if(val == null) {
                   let alert = this.alertController.create({
-                    title: 'Not logged in!',
-                    subTitle: 'In order to check in to a location, you must be logged in.',
+                    title: 'Checked In!',
+                    subTitle: 'For the next 30 minutes, you will be shown as active in this area.',
                     buttons: ['OK']
                   });
                   alert.present(prompt);
-                } else {
-                  let user_id = val.objectId;
-                  let location_id = this.params.get('nest_id');
-                  this.nestServices.checkInLocation(user_id, location_id).subscribe(
-                      data => {
-
-                          this.storage.set('lastCheckIn', checkIn);
-
-                          let alert = this.alertController.create({
-                            title: 'Checked In!',
-                            subTitle: 'For the next 30 minutes, you will be shown as active in this area.',
-                            buttons: ['OK']
-                          });
-                          alert.present(prompt);
-                      },
-                      err => {
-                          console.log(err);
-                      },
-                      () => console.log('Games Search Complete')
-                  );
-                }
-             });
-          }
+              },
+              err => {
+                  console.log(err);
+              },
+              () => console.log('Games Search Complete')
+          );
         }
+     });
+  }
+
+  checkIn() {
+
+    // Check to see if there is already a check-in
+
+    this.storage.get('lastCheckIn').then((val) => {
+
+      // Setup the current time
+      var dateToday = new Date();
+      dateToday.setMinutes(dateToday.getMinutes());
+      let check_date = dateToday.toISOString();
+      let current_date = dateToday.getTime();
+
+      // Get the current selected nest id
+      let location_id = this.params.get('nest_id');
+      // Create the array with the data above
+      let checkIn = [{"location":location_id, "time":check_date}];
+
+      // Check if data has history
+      if(val == null) {
+          this.doCheckIn(checkIn);
+      } else {
+        // Convert the saved DB time
+        var dbdate = new Date(val[0].time);
+        dbdate.setMinutes(dateToday.getMinutes() + 30);
+        var saved_date = dbdate.getTime();
+
+        if(current_date < saved_date) {
+          let alert = this.alertController.create({
+            title: 'Unable to check in',
+            subTitle: 'It appears you are already checked in here.',
+            buttons: ['OK']
+          });
+          alert.present(prompt);
+        } else {
+          this.doCheckIn(checkIn);
+        }
+      }
+
+
+      // Check if time is less than 30 minutes over the saved time
+
+
     });
+
+
+
+
 
 
   }
@@ -121,6 +199,11 @@ export class ContactPage {
         this.nestServices.getCheckedIn(location_id).subscribe(
             data => {
               this.checkedIn = data.results.length;
+              if(this.checkedIn == 1) {
+                this.checkInText = "person has";
+              } else {
+                this.checkInText = "people have";
+              }
               console.log(data);
             },
             err => {
@@ -133,12 +216,48 @@ export class ContactPage {
 
   }
 
+  addInfoWindow(marker, content){
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+
+  }
+
+
+  loadTheMap(data) {
+    if(data.location.latitude == undefined || data.location.longitude == undefined) {
+      let alert = this.alertController.create({
+        title: 'No map data.',
+        subTitle: 'Sorry, we could not find any map data.',
+        buttons: ['OK']
+      });
+      alert.present(prompt);
+    } else {
+      this.loadMap(data.location.latitude, data.location.longitude);
+
+      let marker = new google.maps.Marker({
+        map: this.map,
+        animation: google.maps.Animation.DROP,
+        position: this.map.getCenter()
+      });
+
+      let content = "<small>"+ data.location_name +"</small>";
+
+      this.addInfoWindow(marker, content);
+    }
+  }
+
   getNests(nest_id) {
     this.nestServices.listNestDetails(nest_id).subscribe(
         data => {
             this.nest = data;
             this.pokemon = data.pokemon;
-            console.log(this.pokemon);
+
         },
         err => {
             console.log(err);
@@ -147,50 +266,5 @@ export class ContactPage {
     );
   }
 
-  /*
-  // Load and init the map
-  ngAfterViewInit() {
-   this.loadMap();
-  }
-
-  loadMap() {
-     // make sure to create following structure in your view.html file
-     // <ion-content>
-     //  <div #map id="map"></div>
-     // </ion-content>
-
-     // create a new map by passing HTMLElement
-     let element: HTMLElement = document.getElementById('map');
-
-     let map = new GoogleMap(element);
-
-     // listen to MAP_READY event
-     map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
-
-     // create LatLng object
-     let ionic: GoogleMapsLatLng = new GoogleMapsLatLng(43.0741904,-89.3809802);
-
-     // create CameraPosition
-     let position: CameraPosition = {
-       target: ionic,
-       zoom: 18,
-       tilt: 30
-     };
-
-     // move the map's camera to position
-     map.moveCamera(position);
-
-     // create new marker
-     let markerOptions: GoogleMapsMarkerOptions = {
-       position: ionic,
-       title: 'Ionic'
-     };
-
-     map.addMarker(markerOptions)
-       .then((marker: GoogleMapsMarker) => {
-          marker.showInfoWindow();
-        });
-  }
-  */
 
 }

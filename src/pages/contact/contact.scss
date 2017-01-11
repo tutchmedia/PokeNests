@@ -3,6 +3,13 @@ page-contact {
     text-align: center;
     background-color: #f8f8f8;
   }
+  .p_image {
+    text-align: center;
+  }
+  .p_image img {
+    height:80px;
+    display: inline;
+  }
   .last_nest_change .toolbar-title {
     font-size:11px;
     text-align: center;
@@ -12,5 +19,13 @@ page-contact {
   }
   .no_top {
     margin-top: -5px;
+  }
+  .scroll-content {
+    height: 100%
+  }
+
+  #map {
+    width: 100%;
+    height: 500px;
   }
 }

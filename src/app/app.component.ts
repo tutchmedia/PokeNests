@@ -8,6 +8,9 @@ import { AuthService } from '../providers/auth-service';
 import { LoginPage } from '../pages/login/login';
 
 
+
+declare var Connection: any;
+
 @Component({
   templateUrl: 'app.html',
   providers: [NestService, AuthService]
@@ -69,6 +72,9 @@ export class MyApp {
           });
 
           LocalNotifications.clearAll();
+
+
+          // Check for network connection
 
 
         }// end of IOS check

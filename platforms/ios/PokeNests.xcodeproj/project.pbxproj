@@ -16,6 +16,12 @@
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		E2D415D110B241CF81A703AF /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9522D992F8147CFA30D9479 /* CDVLocation.m */; };
+		AE5F420BD5F548C5801CB555 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01CEC14635947F1A8044D5C /* CoreLocation.framework */; };
+		7ED87E7D447746E59FB6ECB0 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366C054C8D34DC69160239A /* CDVConnection.m */; };
+		F98BB1AC25FF4643A7085FBB /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D44CBFF874D9C9E90A1FB /* CDVReachability.m */; };
+		EB878BCD2EE04F4AB0A14557 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0189F1D088406EBF231AF7 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AC947A0A71DF436B804DF257 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,15 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "PokeNests/config.xml"; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		D9522D992F8147CFA30D9479 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		7D307CB7BABA4A85AF39BCBA /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B01CEC14635947F1A8044D5C /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4366C054C8D34DC69160239A /* CDVConnection.m */ = {isa = PBXFileReference; name = "CDVConnection.m"; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		813D44CBFF874D9C9E90A1FB /* CDVReachability.m */ = {isa = PBXFileReference; name = "CDVReachability.m"; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D01AD2421F094CD38BA52B6A /* CDVConnection.h */ = {isa = PBXFileReference; name = "CDVConnection.h"; path = "cordova-plugin-network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DA1B0554E70046AAB2F7A252 /* CDVReachability.h */ = {isa = PBXFileReference; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9A0189F1D088406EBF231AF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +79,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				AE5F420BD5F548C5801CB555 /* CoreLocation.framework in Frameworks */,
+				EB878BCD2EE04F4AB0A14557 /* SystemConfiguration.framework in Frameworks */,
+				AC947A0A71DF436B804DF257 /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +152,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B01CEC14635947F1A8044D5C /* CoreLocation.framework */,
+				9A0189F1D088406EBF231AF7 /* SystemConfiguration.framework */,
+				4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,6 +180,12 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				D9522D992F8147CFA30D9479 /* CDVLocation.m */,
+				7D307CB7BABA4A85AF39BCBA /* CDVLocation.h */,
+				4366C054C8D34DC69160239A /* CDVConnection.m */,
+				813D44CBFF874D9C9E90A1FB /* CDVReachability.m */,
+				D01AD2421F094CD38BA52B6A /* CDVConnection.h */,
+				DA1B0554E70046AAB2F7A252 /* CDVReachability.h */,
 			);
 			name = Plugins;
 			path = "PokeNests/Plugins";
@@ -271,6 +298,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				E2D415D110B241CF81A703AF /* CDVLocation.m in Sources */,
+				7ED87E7D447746E59FB6ECB0 /* CDVConnection.m in Sources */,
+				F98BB1AC25FF4643A7085FBB /* CDVReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

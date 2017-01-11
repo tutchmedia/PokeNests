@@ -18,11 +18,11 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-list-header>
+    <ion-list-header class="home_header">
       {{location_name}}
     </ion-list-header>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
-      <ion-thumbnail item-left>
+      <ion-thumbnail class="home_image" item-left>
         <img src="assets/pokemon/{{nest.pokemon.number}}.png">
       </ion-thumbnail>
       <h2>{{nest.pokemon.name}}</h2>

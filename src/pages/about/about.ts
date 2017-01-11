@@ -12,6 +12,7 @@ import { Storage } from '@ionic/storage';
 export class AboutPage {
 
   currentUser = [{}];
+  currentLocation = [{}];
 
   constructor(private nav: NavController, private nestService: NestService, private storage: Storage) {
 
@@ -38,6 +39,10 @@ export class AboutPage {
 
 
         }
+
+        this.storage.get('location').then((val) => {
+          this.currentLocation = val;
+        });
      });
 
 
