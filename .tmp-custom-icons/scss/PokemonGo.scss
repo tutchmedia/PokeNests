@@ -1,0 +1,644 @@
+@font-face {
+  font-family: "PokemonGo";
+  src: url('../assets/fonts/PokemonGo.eot');
+  src: url('../assets/fonts/PokemonGo.eot?#iefix') format('eot'),
+  url('../assets/fonts/PokemonGo.woff2') format('woff2'),
+  url('../assets/fonts/PokemonGo.woff') format('woff'),
+  url('../assets/fonts/PokemonGo.ttf') format('truetype'),
+  url('../assets/fonts/PokemonGo.svg#PokemonGo') format('svg');
+}
+
+@mixin pg1-styles {
+  font-family: "PokemonGo";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%pg1 {
+  @include pg1-styles;
+}
+
+@function pg1-char($filename) {
+  $char: "";
+
+  @if $filename == abra {
+  $char: "\E001";
+}
+  @if $filename == action-1 {
+  $char: "\E002";
+}
+  @if $filename == action {
+  $char: "\E003";
+}
+  @if $filename == augmented-reality-1 {
+  $char: "\E004";
+}
+  @if $filename == augmented-reality {
+  $char: "\E005";
+}
+  @if $filename == backpack {
+  $char: "\E006";
+}
+  @if $filename == battle {
+  $char: "\E007";
+}
+  @if $filename == bellsprout {
+  $char: "\E008";
+}
+  @if $filename == blue-team {
+  $char: "\E009";
+}
+  @if $filename == bracelet {
+  $char: "\E00A";
+}
+  @if $filename == bullbasaur {
+  $char: "\E00B";
+}
+  @if $filename == camera {
+  $char: "\E00C";
+}
+  @if $filename == candy {
+  $char: "\E00D";
+}
+  @if $filename == caterpie {
+  $char: "\E00E";
+}
+  @if $filename == charmander {
+  $char: "\E00F";
+}
+  @if $filename == clock {
+  $char: "\E010";
+}
+  @if $filename == combat-power {
+  $char: "\E011";
+}
+  @if $filename == compass {
+  $char: "\E012";
+}
+  @if $filename == crown {
+  $char: "\E013";
+}
+  @if $filename == dratini {
+  $char: "\E014";
+}
+  @if $filename == eevee {
+  $char: "\E015";
+}
+  @if $filename == egg-1 {
+  $char: "\E016";
+}
+  @if $filename == egg-incubator-1 {
+  $char: "\E017";
+}
+  @if $filename == egg-incubator {
+  $char: "\E018";
+}
+  @if $filename == egg {
+  $char: "\E019";
+}
+  @if $filename == fight {
+  $char: "\E01A";
+}
+  @if $filename == fist {
+  $char: "\E01B";
+}
+  @if $filename == footprints {
+  $char: "\E01C";
+}
+  @if $filename == gear {
+  $char: "\E01D";
+}
+  @if $filename == gotcha {
+  $char: "\E01E";
+}
+  @if $filename == heart {
+  $char: "\E01F";
+}
+  @if $filename == hyper-potion {
+  $char: "\E020";
+}
+  @if $filename == incense-score {
+  $char: "\E021";
+}
+  @if $filename == incense {
+  $char: "\E022";
+}
+  @if $filename == incenses {
+  $char: "\E023";
+}
+  @if $filename == insignia-1 {
+  $char: "\E024";
+}
+  @if $filename == insignia {
+  $char: "\E025";
+}
+  @if $filename == instinct-1 {
+  $char: "\E026";
+}
+  @if $filename == instinct {
+  $char: "\E027";
+}
+  @if $filename == jigglypuff {
+  $char: "\E028";
+}
+  @if $filename == lucky-egg-score {
+  $char: "\E029";
+}
+  @if $filename == lucky-egg {
+  $char: "\E02A";
+}
+  @if $filename == lucky-eggs {
+  $char: "\E02B";
+}
+  @if $filename == lure-module-1 {
+  $char: "\E02C";
+}
+  @if $filename == lure-module-score {
+  $char: "\E02D";
+}
+  @if $filename == lure-module {
+  $char: "\E02E";
+}
+  @if $filename == mankey {
+  $char: "\E02F";
+}
+  @if $filename == map {
+  $char: "\E030";
+}
+  @if $filename == mega-ball {
+  $char: "\E031";
+}
+  @if $filename == meowth {
+  $char: "\E032";
+}
+  @if $filename == mew {
+  $char: "\E033";
+}
+  @if $filename == money-bag {
+  $char: "\E034";
+}
+  @if $filename == mystic-1 {
+  $char: "\E035";
+}
+  @if $filename == mystic {
+  $char: "\E036";
+}
+  @if $filename == new {
+  $char: "\E037";
+}
+  @if $filename == open-pokeball {
+  $char: "\E038";
+}
+  @if $filename == pawprints {
+  $char: "\E039";
+}
+  @if $filename == pidgey {
+  $char: "\E03A";
+}
+  @if $filename == pikachu-1 {
+  $char: "\E03B";
+}
+  @if $filename == pikachu-2 {
+  $char: "\E03C";
+}
+  @if $filename == pikachu {
+  $char: "\E03D";
+}
+  @if $filename == player-1 {
+  $char: "\E03E";
+}
+  @if $filename == player {
+  $char: "\E03F";
+}
+  @if $filename == pointer {
+  $char: "\E040";
+}
+  @if $filename == pokebag {
+  $char: "\E041";
+}
+  @if $filename == pokeball {
+  $char: "\E042";
+}
+  @if $filename == pokeballs {
+  $char: "\E043";
+}
+  @if $filename == pokecoin {
+  $char: "\E044";
+}
+  @if $filename == pokecoins-1 {
+  $char: "\E045";
+}
+  @if $filename == pokecoins {
+  $char: "\E046";
+}
+  @if $filename == pokedex {
+  $char: "\E047";
+}
+  @if $filename == pokestop-1 {
+  $char: "\E048";
+}
+  @if $filename == pokestop-2 {
+  $char: "\E049";
+}
+  @if $filename == pokestop-3 {
+  $char: "\E04A";
+}
+  @if $filename == pokestop {
+  $char: "\E04B";
+}
+  @if $filename == potion {
+  $char: "\E04C";
+}
+  @if $filename == psyduck {
+  $char: "\E04D";
+}
+  @if $filename == rattata {
+  $char: "\E04E";
+}
+  @if $filename == razz-berry {
+  $char: "\E04F";
+}
+  @if $filename == red-team {
+  $char: "\E050";
+}
+  @if $filename == revive {
+  $char: "\E051";
+}
+  @if $filename == scene {
+  $char: "\E052";
+}
+  @if $filename == smartphone {
+  $char: "\E053";
+}
+  @if $filename == snorlax {
+  $char: "\E054";
+}
+  @if $filename == squirtle {
+  $char: "\E055";
+}
+  @if $filename == star-1 {
+  $char: "\E056";
+}
+  @if $filename == star {
+  $char: "\E057";
+}
+  @if $filename == stardust {
+  $char: "\E058";
+}
+  @if $filename == super-potion {
+  $char: "\E059";
+}
+  @if $filename == superball {
+  $char: "\E05A";
+}
+  @if $filename == tornado-1 {
+  $char: "\E05B";
+}
+  @if $filename == tornado {
+  $char: "\E05C";
+}
+  @if $filename == ultra-ball {
+  $char: "\E05D";
+}
+  @if $filename == up-arrow {
+  $char: "\E05E";
+}
+  @if $filename == valor-1 {
+  $char: "\E05F";
+}
+  @if $filename == valor {
+  $char: "\E060";
+}
+  @if $filename == venonat {
+  $char: "\E061";
+}
+  @if $filename == weedle {
+  $char: "\E062";
+}
+  @if $filename == yellow-team {
+  $char: "\E063";
+}
+  @if $filename == zubat {
+  $char: "\E064";
+}
+
+@return $char;
+}
+
+@mixin pg1($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %pg1;
+  } @else {
+    @include pg1-styles;
+  }
+  content: pg1-char($filename);
+}
+}
+
+.pg1-abra {
+  @include pg1(abra);
+}
+.pg1-action-1 {
+  @include pg1(action-1);
+}
+.pg1-action {
+  @include pg1(action);
+}
+.pg1-augmented-reality-1 {
+  @include pg1(augmented-reality-1);
+}
+.pg1-augmented-reality {
+  @include pg1(augmented-reality);
+}
+.pg1-backpack {
+  @include pg1(backpack);
+}
+.pg1-battle {
+  @include pg1(battle);
+}
+.pg1-bellsprout {
+  @include pg1(bellsprout);
+}
+.pg1-blue-team {
+  @include pg1(blue-team);
+}
+.pg1-bracelet {
+  @include pg1(bracelet);
+}
+.pg1-bullbasaur {
+  @include pg1(bullbasaur);
+}
+.pg1-camera {
+  @include pg1(camera);
+}
+.pg1-candy {
+  @include pg1(candy);
+}
+.pg1-caterpie {
+  @include pg1(caterpie);
+}
+.pg1-charmander {
+  @include pg1(charmander);
+}
+.pg1-clock {
+  @include pg1(clock);
+}
+.pg1-combat-power {
+  @include pg1(combat-power);
+}
+.pg1-compass {
+  @include pg1(compass);
+}
+.pg1-crown {
+  @include pg1(crown);
+}
+.pg1-dratini {
+  @include pg1(dratini);
+}
+.pg1-eevee {
+  @include pg1(eevee);
+}
+.pg1-egg-1 {
+  @include pg1(egg-1);
+}
+.pg1-egg-incubator-1 {
+  @include pg1(egg-incubator-1);
+}
+.pg1-egg-incubator {
+  @include pg1(egg-incubator);
+}
+.pg1-egg {
+  @include pg1(egg);
+}
+.pg1-fight {
+  @include pg1(fight);
+}
+.pg1-fist {
+  @include pg1(fist);
+}
+.pg1-footprints {
+  @include pg1(footprints);
+}
+.pg1-gear {
+  @include pg1(gear);
+}
+.pg1-gotcha {
+  @include pg1(gotcha);
+}
+.pg1-heart {
+  @include pg1(heart);
+}
+.pg1-hyper-potion {
+  @include pg1(hyper-potion);
+}
+.pg1-incense-score {
+  @include pg1(incense-score);
+}
+.pg1-incense {
+  @include pg1(incense);
+}
+.pg1-incenses {
+  @include pg1(incenses);
+}
+.pg1-insignia-1 {
+  @include pg1(insignia-1);
+}
+.pg1-insignia {
+  @include pg1(insignia);
+}
+.pg1-instinct-1 {
+  @include pg1(instinct-1);
+}
+.pg1-instinct {
+  @include pg1(instinct);
+}
+.pg1-jigglypuff {
+  @include pg1(jigglypuff);
+}
+.pg1-lucky-egg-score {
+  @include pg1(lucky-egg-score);
+}
+.pg1-lucky-egg {
+  @include pg1(lucky-egg);
+}
+.pg1-lucky-eggs {
+  @include pg1(lucky-eggs);
+}
+.pg1-lure-module-1 {
+  @include pg1(lure-module-1);
+}
+.pg1-lure-module-score {
+  @include pg1(lure-module-score);
+}
+.pg1-lure-module {
+  @include pg1(lure-module);
+}
+.pg1-mankey {
+  @include pg1(mankey);
+}
+.pg1-map {
+  @include pg1(map);
+}
+.pg1-mega-ball {
+  @include pg1(mega-ball);
+}
+.pg1-meowth {
+  @include pg1(meowth);
+}
+.pg1-mew {
+  @include pg1(mew);
+}
+.pg1-money-bag {
+  @include pg1(money-bag);
+}
+.pg1-mystic-1 {
+  @include pg1(mystic-1);
+}
+.pg1-mystic {
+  @include pg1(mystic);
+}
+.pg1-new {
+  @include pg1(new);
+}
+.pg1-open-pokeball {
+  @include pg1(open-pokeball);
+}
+.pg1-pawprints {
+  @include pg1(pawprints);
+}
+.pg1-pidgey {
+  @include pg1(pidgey);
+}
+.pg1-pikachu-1 {
+  @include pg1(pikachu-1);
+}
+.pg1-pikachu-2 {
+  @include pg1(pikachu-2);
+}
+.pg1-pikachu {
+  @include pg1(pikachu);
+}
+.pg1-player-1 {
+  @include pg1(player-1);
+}
+.pg1-player {
+  @include pg1(player);
+}
+.pg1-pointer {
+  @include pg1(pointer);
+}
+.pg1-pokebag {
+  @include pg1(pokebag);
+}
+.pg1-pokeball {
+  @include pg1(pokeball);
+}
+.pg1-pokeballs {
+  @include pg1(pokeballs);
+}
+.pg1-pokecoin {
+  @include pg1(pokecoin);
+}
+.pg1-pokecoins-1 {
+  @include pg1(pokecoins-1);
+}
+.pg1-pokecoins {
+  @include pg1(pokecoins);
+}
+.pg1-pokedex {
+  @include pg1(pokedex);
+}
+.pg1-pokestop-1 {
+  @include pg1(pokestop-1);
+}
+.pg1-pokestop-2 {
+  @include pg1(pokestop-2);
+}
+.pg1-pokestop-3 {
+  @include pg1(pokestop-3);
+}
+.pg1-pokestop {
+  @include pg1(pokestop);
+}
+.pg1-potion {
+  @include pg1(potion);
+}
+.pg1-psyduck {
+  @include pg1(psyduck);
+}
+.pg1-rattata {
+  @include pg1(rattata);
+}
+.pg1-razz-berry {
+  @include pg1(razz-berry);
+}
+.pg1-red-team {
+  @include pg1(red-team);
+}
+.pg1-revive {
+  @include pg1(revive);
+}
+.pg1-scene {
+  @include pg1(scene);
+}
+.pg1-smartphone {
+  @include pg1(smartphone);
+}
+.pg1-snorlax {
+  @include pg1(snorlax);
+}
+.pg1-squirtle {
+  @include pg1(squirtle);
+}
+.pg1-star-1 {
+  @include pg1(star-1);
+}
+.pg1-star {
+  @include pg1(star);
+}
+.pg1-stardust {
+  @include pg1(stardust);
+}
+.pg1-super-potion {
+  @include pg1(super-potion);
+}
+.pg1-superball {
+  @include pg1(superball);
+}
+.pg1-tornado-1 {
+  @include pg1(tornado-1);
+}
+.pg1-tornado {
+  @include pg1(tornado);
+}
+.pg1-ultra-ball {
+  @include pg1(ultra-ball);
+}
+.pg1-up-arrow {
+  @include pg1(up-arrow);
+}
+.pg1-valor-1 {
+  @include pg1(valor-1);
+}
+.pg1-valor {
+  @include pg1(valor);
+}
+.pg1-venonat {
+  @include pg1(venonat);
+}
+.pg1-weedle {
+  @include pg1(weedle);
+}
+.pg1-yellow-team {
+  @include pg1(yellow-team);
+}
+.pg1-zubat {
+  @include pg1(zubat);
+}

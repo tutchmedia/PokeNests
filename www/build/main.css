@@ -4758,6 +4758,423 @@
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "PokemonGo";
+  src: url("../assets/fonts/PokemonGo.eot");
+  src: url("../assets/fonts/PokemonGo.eot?#iefix") format("eot"), url("../assets/fonts/PokemonGo.woff2") format("woff2"), url("../assets/fonts/PokemonGo.woff") format("woff"), url("../assets/fonts/PokemonGo.ttf") format("truetype"), url("../assets/fonts/PokemonGo.svg#PokemonGo") format("svg");
+}
+
+.pg1-abra:before, .pg1-action-1:before, .pg1-action:before, .pg1-augmented-reality-1:before, .pg1-augmented-reality:before, .pg1-backpack:before, .pg1-battle:before, .pg1-bellsprout:before, .pg1-blue-team:before, .pg1-bracelet:before, .pg1-bullbasaur:before, .pg1-camera:before, .pg1-candy:before, .pg1-caterpie:before, .pg1-charmander:before, .pg1-clock:before, .pg1-combat-power:before, .pg1-compass:before, .pg1-crown:before, .pg1-dratini:before, .pg1-eevee:before, .pg1-egg-1:before, .pg1-egg-incubator-1:before, .pg1-egg-incubator:before, .pg1-egg:before, .pg1-fight:before, .pg1-fist:before, .pg1-footprints:before, .pg1-gear:before, .pg1-gotcha:before, .pg1-heart:before, .pg1-hyper-potion:before, .pg1-incense-score:before, .pg1-incense:before, .pg1-incenses:before, .pg1-insignia-1:before, .pg1-insignia:before, .pg1-instinct-1:before, .pg1-instinct:before, .pg1-jigglypuff:before, .pg1-lucky-egg-score:before, .pg1-lucky-egg:before, .pg1-lucky-eggs:before, .pg1-lure-module-1:before, .pg1-lure-module-score:before, .pg1-lure-module:before, .pg1-mankey:before, .pg1-map:before, .pg1-mega-ball:before, .pg1-meowth:before, .pg1-mew:before, .pg1-money-bag:before, .pg1-mystic-1:before, .pg1-mystic:before, .pg1-new:before, .pg1-open-pokeball:before, .pg1-pawprints:before, .pg1-pidgey:before, .pg1-pikachu-1:before, .pg1-pikachu-2:before, .pg1-pikachu:before, .pg1-player-1:before, .pg1-player:before, .pg1-pointer:before, .pg1-pokebag:before, .pg1-pokeball:before, .pg1-pokeballs:before, .pg1-pokecoin:before, .pg1-pokecoins-1:before, .pg1-pokecoins:before, .pg1-pokedex:before, .pg1-pokestop-1:before, .pg1-pokestop-2:before, .pg1-pokestop-3:before, .pg1-pokestop:before, .pg1-potion:before, .pg1-psyduck:before, .pg1-rattata:before, .pg1-razz-berry:before, .pg1-red-team:before, .pg1-revive:before, .pg1-scene:before, .pg1-smartphone:before, .pg1-snorlax:before, .pg1-squirtle:before, .pg1-star-1:before, .pg1-star:before, .pg1-stardust:before, .pg1-super-potion:before, .pg1-superball:before, .pg1-tornado-1:before, .pg1-tornado:before, .pg1-ultra-ball:before, .pg1-up-arrow:before, .pg1-valor-1:before, .pg1-valor:before, .pg1-venonat:before, .pg1-weedle:before, .pg1-yellow-team:before, .pg1-zubat:before {
+  font-family: "PokemonGo";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.pg1-abra:before {
+  content: "";
+}
+
+.pg1-action-1:before {
+  content: "";
+}
+
+.pg1-action:before {
+  content: "";
+}
+
+.pg1-augmented-reality-1:before {
+  content: "";
+}
+
+.pg1-augmented-reality:before {
+  content: "";
+}
+
+.pg1-backpack:before {
+  content: "";
+}
+
+.pg1-battle:before {
+  content: "";
+}
+
+.pg1-bellsprout:before {
+  content: "";
+}
+
+.pg1-blue-team:before {
+  content: "";
+}
+
+.pg1-bracelet:before {
+  content: "";
+}
+
+.pg1-bullbasaur:before {
+  content: "";
+}
+
+.pg1-camera:before {
+  content: "";
+}
+
+.pg1-candy:before {
+  content: "";
+}
+
+.pg1-caterpie:before {
+  content: "";
+}
+
+.pg1-charmander:before {
+  content: "";
+}
+
+.pg1-clock:before {
+  content: "";
+}
+
+.pg1-combat-power:before {
+  content: "";
+}
+
+.pg1-compass:before {
+  content: "";
+}
+
+.pg1-crown:before {
+  content: "";
+}
+
+.pg1-dratini:before {
+  content: "";
+}
+
+.pg1-eevee:before {
+  content: "";
+}
+
+.pg1-egg-1:before {
+  content: "";
+}
+
+.pg1-egg-incubator-1:before {
+  content: "";
+}
+
+.pg1-egg-incubator:before {
+  content: "";
+}
+
+.pg1-egg:before {
+  content: "";
+}
+
+.pg1-fight:before {
+  content: "";
+}
+
+.pg1-fist:before {
+  content: "";
+}
+
+.pg1-footprints:before {
+  content: "";
+}
+
+.pg1-gear:before {
+  content: "";
+}
+
+.pg1-gotcha:before {
+  content: "";
+}
+
+.pg1-heart:before {
+  content: "";
+}
+
+.pg1-hyper-potion:before {
+  content: "";
+}
+
+.pg1-incense-score:before {
+  content: "";
+}
+
+.pg1-incense:before {
+  content: "";
+}
+
+.pg1-incenses:before {
+  content: "";
+}
+
+.pg1-insignia-1:before {
+  content: "";
+}
+
+.pg1-insignia:before {
+  content: "";
+}
+
+.pg1-instinct-1:before {
+  content: "";
+}
+
+.pg1-instinct:before {
+  content: "";
+}
+
+.pg1-jigglypuff:before {
+  content: "";
+}
+
+.pg1-lucky-egg-score:before {
+  content: "";
+}
+
+.pg1-lucky-egg:before {
+  content: "";
+}
+
+.pg1-lucky-eggs:before {
+  content: "";
+}
+
+.pg1-lure-module-1:before {
+  content: "";
+}
+
+.pg1-lure-module-score:before {
+  content: "";
+}
+
+.pg1-lure-module:before {
+  content: "";
+}
+
+.pg1-mankey:before {
+  content: "";
+}
+
+.pg1-map:before {
+  content: "";
+}
+
+.pg1-mega-ball:before {
+  content: "";
+}
+
+.pg1-meowth:before {
+  content: "";
+}
+
+.pg1-mew:before {
+  content: "";
+}
+
+.pg1-money-bag:before {
+  content: "";
+}
+
+.pg1-mystic-1:before {
+  content: "";
+}
+
+.pg1-mystic:before {
+  content: "";
+}
+
+.pg1-new:before {
+  content: "";
+}
+
+.pg1-open-pokeball:before {
+  content: "";
+}
+
+.pg1-pawprints:before {
+  content: "";
+}
+
+.pg1-pidgey:before {
+  content: "";
+}
+
+.pg1-pikachu-1:before {
+  content: "";
+}
+
+.pg1-pikachu-2:before {
+  content: "";
+}
+
+.pg1-pikachu:before {
+  content: "";
+}
+
+.pg1-player-1:before {
+  content: "";
+}
+
+.pg1-player:before {
+  content: "";
+}
+
+.pg1-pointer:before {
+  content: "";
+}
+
+.pg1-pokebag:before {
+  content: "";
+}
+
+.pg1-pokeball:before {
+  content: "";
+}
+
+.pg1-pokeballs:before {
+  content: "";
+}
+
+.pg1-pokecoin:before {
+  content: "";
+}
+
+.pg1-pokecoins-1:before {
+  content: "";
+}
+
+.pg1-pokecoins:before {
+  content: "";
+}
+
+.pg1-pokedex:before {
+  content: "";
+}
+
+.pg1-pokestop-1:before {
+  content: "";
+}
+
+.pg1-pokestop-2:before {
+  content: "";
+}
+
+.pg1-pokestop-3:before {
+  content: "";
+}
+
+.pg1-pokestop:before {
+  content: "";
+}
+
+.pg1-potion:before {
+  content: "";
+}
+
+.pg1-psyduck:before {
+  content: "";
+}
+
+.pg1-rattata:before {
+  content: "";
+}
+
+.pg1-razz-berry:before {
+  content: "";
+}
+
+.pg1-red-team:before {
+  content: "";
+}
+
+.pg1-revive:before {
+  content: "";
+}
+
+.pg1-scene:before {
+  content: "";
+}
+
+.pg1-smartphone:before {
+  content: "";
+}
+
+.pg1-snorlax:before {
+  content: "";
+}
+
+.pg1-squirtle:before {
+  content: "";
+}
+
+.pg1-star-1:before {
+  content: "";
+}
+
+.pg1-star:before {
+  content: "";
+}
+
+.pg1-stardust:before {
+  content: "";
+}
+
+.pg1-super-potion:before {
+  content: "";
+}
+
+.pg1-superball:before {
+  content: "";
+}
+
+.pg1-tornado-1:before {
+  content: "";
+}
+
+.pg1-tornado:before {
+  content: "";
+}
+
+.pg1-ultra-ball:before {
+  content: "";
+}
+
+.pg1-up-arrow:before {
+  content: "";
+}
+
+.pg1-valor-1:before {
+  content: "";
+}
+
+.pg1-valor:before {
+  content: "";
+}
+
+.pg1-venonat:before {
+  content: "";
+}
+
+.pg1-weedle:before {
+  content: "";
+}
+
+.pg1-yellow-team:before {
+  content: "";
+}
+
+.pg1-zubat:before {
+  content: "";
+}
+
 ion-action-sheet {
   position: absolute;
   top: 0;
@@ -5750,16 +6167,19 @@ a,
 a div,
 a span,
 a ion-icon,
+a custom-icon,
 a ion-label,
 button,
 button div,
 button span,
 button ion-icon,
+button custom-icon,
 button ion-label,
 [tappable],
 [tappable] div,
 [tappable] span,
 [tappable] ion-icon,
+[tappable] custom-icon,
 [tappable] ion-label,
 input,
 textarea {
@@ -6254,14 +6674,14 @@ button[disabled],
   border-radius: 0;
 }
 
-[icon-left] ion-icon {
+[icon-left] ion-icon, [icon-left] custom-icon {
   font-size: 1.4em;
   line-height: .67;
   pointer-events: none;
   padding-right: .3em;
 }
 
-[icon-right] ion-icon {
+[icon-right] ion-icon, [icon-right] custom-icon {
   font-size: 1.4em;
   line-height: .67;
   pointer-events: none;
@@ -6273,7 +6693,7 @@ button[disabled],
   min-width: .9em;
 }
 
-[icon-only] ion-icon {
+[icon-only] ion-icon, [icon-only] custom-icon {
   padding: 0 .5em;
   font-size: 1.8em;
   line-height: .67;
@@ -6311,7 +6731,7 @@ button[disabled],
   font-size: 1.3rem;
 }
 
-.button-small-ios[icon-only] ion-icon {
+.button-small-ios[icon-only] ion-icon, .button-small-ios[icon-only] custom-icon {
   font-size: 1.3em;
 }
 
@@ -6646,7 +7066,7 @@ button[disabled],
   font-size: 1.3rem;
 }
 
-.button-small-md[icon-only] ion-icon {
+.button-small-md[icon-only] ion-icon, .button-small-md[icon-only] custom-icon {
   font-size: 1.4em;
 }
 
@@ -7128,7 +7548,7 @@ button[disabled],
   font-size: 1.3rem;
 }
 
-.button-small-wp[icon-only] ion-icon {
+.button-small-wp[icon-only] ion-icon, .button-small-wp[icon-only] custom-icon {
   font-size: 1.4em;
 }
 
@@ -9715,7 +10135,7 @@ ion-chip .button {
   border-radius: 50%;
 }
 
-ion-chip ion-icon {
+ion-chip ion-icon, ion-chip custom-icon {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -9754,7 +10174,7 @@ ion-chip ion-avatar img {
   margin: 0 10px;
 }
 
-.chip-ios > ion-icon {
+.chip-ios > ion-icon, .chip-ios > custom-icon {
   color: #fff;
   background-color: #242633;
 }
@@ -9815,7 +10235,7 @@ ion-chip ion-avatar img {
   margin: 0 10px;
 }
 
-.chip-md > ion-icon {
+.chip-md > ion-icon, .chip-md > custom-icon {
   color: #fff;
   background-color: #242633;
 }
@@ -9876,7 +10296,7 @@ ion-chip ion-avatar img {
   margin: 0 10px;
 }
 
-.chip-wp > ion-icon {
+.chip-wp > ion-icon, .chip-wp > custom-icon {
   color: #fff;
   background-color: #242633;
 }
@@ -10368,7 +10788,7 @@ ion-datetime {
   contain: strict;
 }
 
-.fab ion-icon {
+.fab ion-icon, .fab custom-icon {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -11062,12 +11482,12 @@ ion-col[width-90] {
   }
 }
 
-ion-icon {
+ion-icon, custom-icon {
   display: inline-block;
   font-size: 1.2em;
 }
 
-ion-icon[small] {
+ion-icon[small], custom-icon[small] {
   min-height: 1.1em;
   font-size: 1.1em;
 }
@@ -11623,32 +12043,37 @@ ion-input.item {
   align-items: flex-start;
 }
 
-.item > ion-icon[small]:first-child,
-.item-inner > ion-icon[small]:first-child {
+.item > ion-icon[small]:first-child, .item > custom-icon[small]:first-child,
+.item-inner > ion-icon[small]:first-child,
+.item-inner > custom-icon[small]:first-child {
   min-width: 18px;
 }
 
-.item > ion-icon:first-child,
-.item-inner > ion-icon:first-child {
+.item > ion-icon:first-child, .item > custom-icon:first-child,
+.item-inner > ion-icon:first-child,
+.item-inner > custom-icon:first-child {
   min-width: 24px;
   text-align: center;
 }
 
-.item > ion-icon,
-.item-inner > ion-icon {
+.item > ion-icon, .item > custom-icon,
+.item-inner > ion-icon,
+.item-inner > custom-icon {
   min-height: 2.8rem;
   font-size: 2.8rem;
   line-height: 1;
 }
 
-.item > ion-icon[large],
-.item-inner > ion-icon[large] {
+.item > ion-icon[large], .item > custom-icon[large],
+.item-inner > ion-icon[large],
+.item-inner > custom-icon[large] {
   min-height: 3.2rem;
   font-size: 3.2rem;
 }
 
-.item > ion-icon[small],
-.item-inner > ion-icon[small] {
+.item > ion-icon[small], .item > custom-icon[small],
+.item-inner > ion-icon[small],
+.item-inner > custom-icon[small] {
   min-height: 1.8rem;
   font-size: 1.8rem;
 }
@@ -11700,7 +12125,7 @@ ion-reorder {
   touch-action: manipulation;
 }
 
-ion-reorder ion-icon {
+ion-reorder ion-icon, ion-reorder custom-icon {
   pointer-events: none;
 }
 
@@ -11785,7 +12210,7 @@ ion-item-options:not([icon-left]) .button:not([icon-only]) .button-inner {
   flex-direction: column;
 }
 
-ion-item-options:not([icon-left]) .button:not([icon-only]) ion-icon {
+ion-item-options:not([icon-left]) .button:not([icon-only]) ion-icon, ion-item-options:not([icon-left]) .button:not([icon-only]) custom-icon {
   padding-right: 0;
   padding-bottom: .3em;
   padding-left: 0;
@@ -11914,8 +12339,9 @@ ion-item-sliding.active-swipe-left button[expandable] {
   margin: 8px 8px 8px 8px;
 }
 
-.item-ios ion-icon[item-left],
-.item-ios ion-icon[item-right] {
+.item-ios ion-icon[item-left], .item-ios custom-icon[item-left],
+.item-ios ion-icon[item-right],
+.item-ios custom-icon[item-right] {
   margin-top: 9px;
   margin-bottom: 8px;
   margin-left: 0;
@@ -11927,7 +12353,7 @@ ion-item-sliding.active-swipe-left button[expandable] {
   font-size: 1.3rem;
 }
 
-.item-ios .item-button[icon-only] ion-icon,
+.item-ios .item-button[icon-only] ion-icon, .item-ios .item-button[icon-only] custom-icon,
 .item-ios .item-button[icon-only] {
   padding: 0 1px;
 }
@@ -12197,8 +12623,9 @@ ion-item-group .item-wrapper:last-child .item-ios .item-inner {
   margin: 9px 8px 9px 0;
 }
 
-.item-md ion-icon[item-left],
-.item-md ion-icon[item-right] {
+.item-md ion-icon[item-left], .item-md custom-icon[item-left],
+.item-md ion-icon[item-right],
+.item-md custom-icon[item-right] {
   margin-top: 11px;
   margin-bottom: 10px;
   margin-left: 0;
@@ -12210,13 +12637,14 @@ ion-item-group .item-wrapper:last-child .item-ios .item-inner {
   font-size: 1.2rem;
 }
 
-.item-md .item-button[icon-only] ion-icon,
+.item-md .item-button[icon-only] ion-icon, .item-md .item-button[icon-only] custom-icon,
 .item-md .item-button[icon-only] {
   padding: 0 1px;
 }
 
-.item-md ion-icon[item-left] + .item-inner,
-.item-md ion-icon[item-left] + .item-input {
+.item-md ion-icon[item-left] + .item-inner, .item-md custom-icon[item-left] + .item-inner,
+.item-md ion-icon[item-left] + .item-input,
+.item-md custom-icon[item-left] + .item-input {
   margin-left: 24px;
 }
 
@@ -12481,8 +12909,9 @@ ion-item-group .item-md .item-wrapper:last-child .item-inner {
   margin: 9px 8px 9px 0;
 }
 
-.item-wp ion-icon[item-left],
-.item-wp ion-icon[item-right] {
+.item-wp ion-icon[item-left], .item-wp custom-icon[item-left],
+.item-wp ion-icon[item-right],
+.item-wp custom-icon[item-right] {
   margin-top: 11px;
   margin-bottom: 10px;
   margin-left: 0;
@@ -12494,7 +12923,7 @@ ion-item-group .item-md .item-wrapper:last-child .item-inner {
   font-size: 1.2rem;
 }
 
-.item-wp .item-button[icon-only] ion-icon,
+.item-wp .item-button[icon-only] ion-icon, .item-wp .item-button[icon-only] custom-icon,
 .item-wp .item-button[icon-only] {
   padding: 0 1px;
 }
@@ -12504,8 +12933,9 @@ ion-item-group .item-md .item-wrapper:last-child .item-inner {
   line-height: 1.5;
 }
 
-.item-wp ion-icon[item-left] + .item-inner,
-.item-wp ion-icon[item-left] + .item-input {
+.item-wp ion-icon[item-left] + .item-inner, .item-wp custom-icon[item-left] + .item-inner,
+.item-wp ion-icon[item-left] + .item-input,
+.item-wp custom-icon[item-left] + .item-input {
   margin-left: 8px;
 }
 
@@ -14899,7 +15329,7 @@ ion-range ion-label {
   flex: initial;
 }
 
-ion-range ion-icon {
+ion-range ion-icon, ion-range custom-icon {
   min-height: 2.4rem;
   font-size: 2.4rem;
   line-height: 1;
@@ -16319,7 +16749,7 @@ ion-segment {
   background-color: transparent;
 }
 
-.segment-ios .segment-button ion-icon {
+.segment-ios .segment-button ion-icon, .segment-ios .segment-button custom-icon {
   font-size: 2.6rem;
   line-height: 2.8rem;
 }
@@ -16376,7 +16806,7 @@ ion-segment {
   line-height: 2.5rem;
 }
 
-.toolbar-ios .segment-button ion-icon {
+.toolbar-ios .segment-button ion-icon, .toolbar-ios .segment-button custom-icon {
   font-size: 2.2rem;
   line-height: 2.4rem;
 }
@@ -16583,7 +17013,7 @@ ion-segment {
   transition: 100ms all linear;
 }
 
-.segment-md .segment-button ion-icon {
+.segment-md .segment-button ion-icon, .segment-md .segment-button custom-icon {
   font-size: 2.6rem;
   line-height: 4rem;
 }
@@ -16699,7 +17129,7 @@ ion-segment {
   opacity: 1;
 }
 
-.segment-wp .segment-button ion-icon {
+.segment-wp .segment-button ion-icon, .segment-wp .segment-button custom-icon {
   font-size: 2.6rem;
   line-height: 4rem;
 }
@@ -17979,6 +18409,7 @@ ion-spinner.spinner-paused svg {
 
 .tab-disabled ion-badge,
 .tab-disabled ion-icon,
+.tab-disabled custom-icon,
 .tab-disabled span {
   opacity: .4;
 }
@@ -18123,8 +18554,9 @@ ion-spinner.spinner-paused svg {
   line-height: 1.1;
 }
 
-.tabs-ios[tabsLayout=icon-right] .tab-button ion-icon,
-.tabs-ios[tabsLayout=icon-left] .tab-button ion-icon {
+.tabs-ios[tabsLayout=icon-right] .tab-button ion-icon, .tabs-ios[tabsLayout=icon-right] .tab-button custom-icon,
+.tabs-ios[tabsLayout=icon-left] .tab-button ion-icon,
+.tabs-ios[tabsLayout=icon-left] .tab-button custom-icon {
   min-width: 24px;
   height: 26px;
   font-size: 24px;
@@ -18563,8 +18995,9 @@ ion-spinner.spinner-paused svg {
   padding-bottom: 10px;
 }
 
-.tabs-wp[tabsLayout=icon-right] .tab-button ion-icon,
-.tabs-wp[tabsLayout=icon-left] .tab-button ion-icon {
+.tabs-wp[tabsLayout=icon-right] .tab-button ion-icon, .tabs-wp[tabsLayout=icon-right] .tab-button custom-icon,
+.tabs-wp[tabsLayout=icon-left] .tab-button ion-icon,
+.tabs-wp[tabsLayout=icon-left] .tab-button custom-icon {
   min-width: 24px;
 }
 
@@ -19478,14 +19911,14 @@ ion-navbar.toolbar {
   opacity: .4;
 }
 
-.bar-button-ios.bar-button-icon-left ion-icon {
+.bar-button-ios.bar-button-icon-left ion-icon, .bar-button-ios.bar-button-icon-left custom-icon {
   padding-right: .3em;
   font-size: 1.4em;
   line-height: .67;
   pointer-events: none;
 }
 
-.bar-button-ios.bar-button-icon-right ion-icon {
+.bar-button-ios.bar-button-icon-right ion-icon, .bar-button-ios.bar-button-icon-right custom-icon {
   padding-left: .4em;
   font-size: 1.4em;
   line-height: .67;
@@ -19497,7 +19930,7 @@ ion-navbar.toolbar {
   min-width: .9em;
 }
 
-.bar-button-ios[icon-only] ion-icon {
+.bar-button-ios[icon-only] ion-icon, .bar-button-ios[icon-only] custom-icon {
   padding: 0 .1em;
   font-size: 1.8em;
   line-height: .67;
@@ -19537,7 +19970,7 @@ ion-navbar.toolbar {
   min-width: 36px;
 }
 
-.bar-button-menutoggle-ios ion-icon {
+.bar-button-menutoggle-ios ion-icon, .bar-button-menutoggle-ios custom-icon {
   padding: 0 6px;
   font-size: 2.8rem;
 }
@@ -22044,14 +22477,14 @@ ion-navbar.toolbar {
   background-color: #515151;
 }
 
-.bar-button-md.bar-button-icon-left ion-icon {
+.bar-button-md.bar-button-icon-left ion-icon, .bar-button-md.bar-button-icon-left custom-icon {
   padding-right: .3em;
   font-size: 1.4em;
   line-height: .67;
   pointer-events: none;
 }
 
-.bar-button-md.bar-button-icon-right ion-icon {
+.bar-button-md.bar-button-icon-right ion-icon, .bar-button-md.bar-button-icon-right custom-icon {
   padding-left: .4em;
   font-size: 1.4em;
   line-height: .67;
@@ -22062,7 +22495,7 @@ ion-navbar.toolbar {
   padding: 0;
 }
 
-.bar-button-md[icon-only] ion-icon {
+.bar-button-md[icon-only] ion-icon, .bar-button-md[icon-only] custom-icon {
   padding: 0 .1em;
   min-width: 28px;
   font-size: 1.8em;
@@ -22093,7 +22526,7 @@ ion-navbar.toolbar {
   min-width: 44px;
 }
 
-.bar-button-menutoggle-md ion-icon {
+.bar-button-menutoggle-md ion-icon, .bar-button-menutoggle-md custom-icon {
   padding: 0 6px;
   font-size: 2.4rem;
 }
@@ -24467,14 +24900,14 @@ ion-navbar.toolbar {
   background-color: #141414;
 }
 
-.bar-button-wp.bar-button-icon-left ion-icon {
+.bar-button-wp.bar-button-icon-left ion-icon, .bar-button-wp.bar-button-icon-left custom-icon {
   padding-right: .3em;
   font-size: 1.4em;
   line-height: .67;
   pointer-events: none;
 }
 
-.bar-button-wp.bar-button-icon-right ion-icon {
+.bar-button-wp.bar-button-icon-right ion-icon, .bar-button-wp.bar-button-icon-right custom-icon {
   padding-left: .4em;
   font-size: 1.4em;
   line-height: .67;
@@ -24485,7 +24918,7 @@ ion-navbar.toolbar {
   padding: 0;
 }
 
-.bar-button-wp[icon-only] ion-icon {
+.bar-button-wp[icon-only] ion-icon, .bar-button-wp[icon-only] custom-icon {
   padding: 0 .1em;
   min-width: 28px;
   font-size: 1.8em;
@@ -24516,7 +24949,7 @@ ion-navbar.toolbar {
   min-width: 44px;
 }
 
-.bar-button-menutoggle-wp ion-icon {
+.bar-button-menutoggle-wp ion-icon, .bar-button-menutoggle-wp custom-icon {
   padding: 0 6px;
   font-size: 2.4rem;
 }
