@@ -4,13 +4,13 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "ionic2-custom-icons": "ionic2-custom-icons",
-    "build:before": "ionic2-custom-icons",
-    "serve:before": "ionic2-custom-icons",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:build": "ionic-app-scripts build --dev",
+    "ionic:serve": "ionic-app-scripts serve",
+    "ionic2-custom-icons": "ionic2-custom-icons",
+    "build:before": "ionic2-custom-icons",
+    "serve:before": "ionic2-custom-icons"
   },
   "dependencies": {
     "@angular/common": "2.2.1",
@@ -31,7 +31,6 @@
     "zone.js": "0.6.26"
   },
   "config": {
-    "ionic_copy": "./config/copy.config.js",
     "ionic_sass": "./config/sass.config.js",
     "custom_icons": "./config/custom-icons.config.js"
   },

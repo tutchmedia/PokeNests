@@ -1,15 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import {
- GoogleMap,
- GoogleMapsEvent,
- GoogleMapsLatLng,
- CameraPosition,
- GoogleMapsMarkerOptions,
- GoogleMapsMarker,
- Geolocation
-} from 'ionic-native';
+
 // Services
 import { NestService } from '../../services/NestService';
 // Storage
