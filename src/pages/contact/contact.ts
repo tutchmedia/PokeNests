@@ -262,8 +262,9 @@ export class ContactPage {
 
   getNotes(nest_id) {
     this.nestServices.listNestNotes(nest_id).subscribe(
-        data => {
-            this.notes = data;
+        list => {
+            console.log(list.results);
+            this.notes = list.results;
         },
         err => {
             console.log(err);

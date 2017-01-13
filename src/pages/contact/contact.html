@@ -51,7 +51,14 @@
 
   <!-- Notes View -->
   <div class="notes_view" [hidden]="!showNotes">
-
+    <ion-list>
+      <ion-list-header class="home_header">
+        User Notes
+      </ion-list-header>
+      <ion-item ion-item *ngFor="let note of notes">
+        <p>{{note.comment}}</p>
+      </ion-item>
+    </ion-list>
   </div>
 
 </ion-content>
