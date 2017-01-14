@@ -27409,6 +27409,14 @@ page-about .about-content h2 {
   text-align: center;
 }
 
+page-add-note-page .text_area {
+  height: 300px !important;
+}
+
+page-add-note-page textarea {
+  height: 300px !important;
+}
+
 page-contact .center {
   text-align: center;
   background-color: #f8f8f8;

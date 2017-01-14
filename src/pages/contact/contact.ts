@@ -1,6 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
+
+// other pages
+import { AddNotePagePage } from '../add-note-page/add-note-page';
+
 
 // Services
 import { NestService } from '../../services/NestService';
@@ -33,7 +37,7 @@ export class ContactPage {
   showMap = false;
   showNotes = false;
 
-  constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage) {
+  constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController) {
 
     this.item = this.params.get('nest_id');
 
@@ -271,6 +275,32 @@ export class ContactPage {
         },
         () => console.log('Notes Search Complete')
     );
+  }
+
+  addComment() {
+    console.log("called note model");
+
+    // Check if logged in
+    this.storage.get('currentUser').then((val) => {
+
+      if(val == undefined)
+      {
+        let alert = this.alertController.create({
+          title: 'Not logged in!',
+          subTitle: 'In order to add a note, you must be logged in.',
+          buttons: ['OK']
+        });
+        alert.present(prompt);
+      } else {
+        let commentModal = this.modalCtrl.create(AddNotePagePage, { nest_id: this.item });
+        commentModal.present();
+      }
+
+
+    });
+
+
+
   }
 
 

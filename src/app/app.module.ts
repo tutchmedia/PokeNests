@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
 import { RegisterPage } from '../pages/register/register';
 import { LocationPage } from '../pages/location/location';
+import { AddNotePagePage } from '../pages/add-note-page/add-note-page';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LocationPage } from '../pages/location/location';
     TabsPage,
     LoginPage,
     RegisterPage,
-    LocationPage
+    LocationPage,
+    AddNotePagePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -36,7 +38,8 @@ import { LocationPage } from '../pages/location/location';
     TabsPage,
     LoginPage,
     RegisterPage,
-    LocationPage
+    LocationPage,
+    AddNotePagePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService, Storage]
 })

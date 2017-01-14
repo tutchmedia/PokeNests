@@ -166,6 +166,21 @@ export class NestService {
 
     }
 
+
+    addComment(nest, user, comment) {
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      let p_data = {"user":{ "__type": "Pointer", "className":"_User","objectId": user}, "nest":{ "__type": "Pointer", "className":"nests","objectId": nest}, "comment":comment};
+
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/notes/';
+      var response = this.http.post(url, p_data, {
+        headers: headers
+      }).map(res => res.json());
+
+      return response;
+    }
+
     loginUser(username: string, password: string) {
       var user = new Parse.User();
       user.set("username", username);

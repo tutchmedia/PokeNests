@@ -58,6 +58,9 @@
       <ion-item ion-item *ngFor="let note of notes">
         <p>{{note.comment}}</p>
       </ion-item>
+      <div padding>
+        <button (click)="addComment(nest.objectId)" ion-button full>Add Note</button>
+      </div>
     </ion-list>
   </div>
 
