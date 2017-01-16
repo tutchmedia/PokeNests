@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController, LoadingController } from 'ionic-angular';
 
 // other pages
 import { AddNotePagePage } from '../add-note-page/add-note-page';
@@ -23,13 +23,12 @@ export class ContactPage {
   item = 0;
   nest = [{}];
   notes = [{}];
+  notesuser = [{}];
   pokemon = [{}];
   checkedIn = 0;
   checkInText = "people";
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-
-
 
   // Default view
   innerTab = "";
@@ -37,7 +36,8 @@ export class ContactPage {
   showMap = false;
   showNotes = false;
 
-  constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController) {
+
+  constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
 
     this.item = this.params.get('nest_id');
 
@@ -47,9 +47,10 @@ export class ContactPage {
   }
 
   ngAfterViewInit() {
-        console.log('on after view init', this.mapElement);
-        // this returns null
-    }
+      console.log('on after view init', this.mapElement);
+      // this returns null
+  }
+
 
 
   changePage(view) {
@@ -126,7 +127,12 @@ export class ContactPage {
                   let alert = this.alertController.create({
                     title: 'Checked In!',
                     subTitle: 'For the next 30 minutes, you will be shown as active in this area.',
-                    buttons: ['OK']
+                    buttons: [{
+                        text: 'Ok',
+                        handler: data => {
+                          this.getCheckedIn();
+                        }
+                      }]
                   });
                   alert.present(prompt);
               },
@@ -191,24 +197,30 @@ export class ContactPage {
   }
 
   getCheckedIn() {
-    let location_id = this.params.get('nest_id');
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
 
-          // Do a check againt the value for the time and check it wasn't in the last hour
-        this.nestServices.getCheckedIn(location_id).subscribe(
-            data => {
-              this.checkedIn = data.results.length;
-              if(this.checkedIn == 1) {
-                this.checkInText = "person has";
-              } else {
-                this.checkInText = "people have";
-              }
-              console.log(data);
-            },
-            err => {
-                console.log(err);
-            },
-            () => console.log('Checked in Search Complete')
-        );
+    loading.present();
+
+
+    let location_id = this.params.get('nest_id');
+      // Do a check againt the value for the time and check it wasn't in the last hour
+    this.nestServices.getCheckedIn(location_id).subscribe(
+        data => {
+          this.checkedIn = data.results.length;
+          if(this.checkedIn == 1) {
+            this.checkInText = "person has";
+          } else {
+            this.checkInText = "people have";
+          }
+          console.log(data);
+        },
+        err => {
+            console.log(err);
+        },
+        () => loading.dismiss()
+    );
 
 
 
@@ -265,15 +277,20 @@ export class ContactPage {
   }
 
   getNotes(nest_id) {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present();
+
     this.nestServices.listNestNotes(nest_id).subscribe(
         list => {
-            console.log(list.results);
             this.notes = list.results;
         },
         err => {
             console.log(err);
         },
-        () => console.log('Notes Search Complete')
+        () => loading.dismiss()
     );
   }
 

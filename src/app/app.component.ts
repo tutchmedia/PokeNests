@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen, Push, LocalNotifications} from 'ionic-native';
+import { Storage } from '@ionic/storage';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { NestService } from '../services/NestService';
@@ -18,13 +19,28 @@ declare var Connection: any;
 export class MyApp {
   rootPage = TabsPage;
 
-  constructor(platform: Platform, private nestServices: NestService) {
+  constructor(platform: Platform, private nestServices: NestService, storage: Storage) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleLightContent();
       Splashscreen.hide();
+
+
+      // Get the settings
+      this.nestServices.getSettings().subscribe(
+          data => {
+              console.log(data);
+              storage.set('settings', data);
+          },
+          err => {
+              console.log(err);
+          },
+          () => console.log('Installation ID Complete')
+      );
+
+
 
       // Get to show for IOS only
       if (platform.is('ios')) {

@@ -30,7 +30,9 @@ export class HomePage {
 
 
   ionViewWillEnter() {
-    console.log("Will Enter");
+  }
+
+  ionViewDidLoad() {
     this.getPageData();
   }
 
@@ -57,6 +59,11 @@ export class HomePage {
 
 
   getNests() {
+    let loading = this.loadingCtrl.create({
+      content: 'Getting nests...'
+    });
+
+    loading.present();
     this.nestServices.listNests(this.location).subscribe(
         data => {
             this.nests = data.results;
@@ -65,7 +72,7 @@ export class HomePage {
         err => {
             console.log(err);
         },
-        () => console.log('Games Search Complete')
+        () => loading.dismiss()
     );
   }
 

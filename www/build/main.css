@@ -27457,6 +27457,14 @@ page-contact #map {
   height: 500px;
 }
 
+page-contact ion-note {
+  font-size: 11px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-top: -10px;
+}
+
 page-home .pokemon_list {
   padding-left: 5px !important;
 }

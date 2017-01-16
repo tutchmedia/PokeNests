@@ -37,6 +37,19 @@ export class NestService {
     }
 
 
+
+    getSettings() {
+      let headers = new Headers();
+      this.createAuthorizationHeader(headers);
+
+      var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/config';
+      var response = this.http.get(url, {
+        headers: headers
+      }).map(res => res.json());
+      return response;
+    }
+
+
     listNests(loc) {
 
         let headers = new Headers();
@@ -118,7 +131,7 @@ export class NestService {
         let headers = new Headers();
         this.createAuthorizationHeader(headers);
 
-        var query = 'include=_User&where={"nest":{"__type":"Pointer","className":"nests","objectId":"'+id+'"}}';
+        var query = 'include=user&where={"nest":{"__type":"Pointer","className":"nests","objectId":"'+id+'"}}';
         var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/classes/notes?'+query;
         var response = this.http.get(url, {
           headers: headers
