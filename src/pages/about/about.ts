@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, ModalController} from 'ionic-angular';
 import { NestService } from '../../services/NestService';
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
+import { LocationPage } from '../location/location';
 
 @Component({
   selector: 'page-about',
@@ -14,7 +15,7 @@ export class AboutPage {
   currentUser = [{}];
   currentLocation = [{}];
 
-  constructor(private nav: NavController, private nestService: NestService, private storage: Storage) {
+  constructor(private nav: NavController, private nestService: NestService, private storage: Storage, public modalCtrl: ModalController) {
 
   }
 
@@ -34,6 +35,7 @@ export class AboutPage {
           } else {
             // Do stuff once logged in
             let info = this.nestService.getUserInfo(val);
+            console.log(info);
             this.currentUser = info;
           }
 
@@ -47,8 +49,11 @@ export class AboutPage {
 
 
 
+  }
 
-
+  presentModal() {
+    let modal = this.modalCtrl.create(LocationPage);
+    modal.present();
   }
 
 

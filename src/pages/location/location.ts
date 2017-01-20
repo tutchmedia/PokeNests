@@ -61,7 +61,7 @@ export class LocationPage {
     this.storage.set('location', this.select_location);
     this.viewCtrl.dismiss();
 
-    this.app.getRootNav().getActiveChildNav().select(0);
+    //this.app.getRootNav().getActiveChildNav().select(0);
   }
 
   dismiss() {

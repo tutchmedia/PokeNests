@@ -20,6 +20,7 @@ export class HomePage {
   nests: [{}];
   location_name = "";
   location = [{}];
+  next_spawn = "";
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController,public storage: Storage) {
 
@@ -34,6 +35,48 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.getPageData();
+
+    // Get the next spawn
+    this.getNextSpawn();
+  }
+
+  daysBetween( date1, date2 ) {
+    //Get 1 day in milliseconds
+    var one_day=1000*60*60*24;
+
+    // Convert both dates to milliseconds
+    var date1_ms = date1.getTime();
+    var date2_ms = date2.getTime();
+
+    // Calculate the difference in milliseconds
+    var difference_ms = date2_ms - date1_ms;
+
+    // Convert back to days and return
+    return Math.round(difference_ms/one_day);
+  }
+
+  getNextSpawn() {
+    this.storage.get('settings').then((val) => {
+        if(val == null) {
+          this.next_spawn = "TBC";
+        } else {
+          // Location set, get the data
+
+          var y2k  = new Date(2000, 0, 1);
+          var Jan1st2010 = new Date(val.params.nest_change.iso);
+          var today= new Date();
+          let days_text = "";
+
+          var get_days = this.daysBetween(today, Jan1st2010);
+          if(get_days == 1)
+          {
+            days_text = " day left";
+          } else {
+            days_text = " days left";
+          }
+          this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
+        }
+     })
   }
 
 

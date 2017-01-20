@@ -12,8 +12,12 @@
 </ion-header>
 
 <ion-content padding class="about-content">
-  <h2>{{currentUser.first_name}} {{currentUser.last_name}}</h2>
+  <ion-img style="width: 80px; height: 80px; border-radius:40px;" src="{{currentUser.avatar?.url}}"></ion-img>
+  <h2>{{currentUser.first_name}} {{currentUser.last_name}} <span *ngIf="currentUser.approved==true" class="verified"><ion-icon name="checkmark-circle"></ion-icon></span></h2>
   <small>You are currently in: {{currentLocation.city}}</small>
 
+  <button ion-button full>Edit User</button>
+
+  <button ion-button full (click)="presentModal()">Change Location</button>
 
 </ion-content>

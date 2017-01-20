@@ -53,11 +53,14 @@ export class ContactPage {
 
 
 
+
   changePage(view) {
     console.log(view);
     if(view == "showMap")
     {
+      // Reload the map div
       this.loadTheMap(this.nest);
+
       // Show page
       this.showMap = true;
       this.showInfo = false;
@@ -94,7 +97,7 @@ export class ContactPage {
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-
+    google.maps.event.trigger(this.mapElement.nativeElement, 'resize');
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 

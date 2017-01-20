@@ -27409,6 +27409,11 @@ page-about .about-content h2 {
   text-align: center;
 }
 
+page-about .verified {
+  color: #77c7f7;
+  font-size: 14px;
+}
+
 page-add-note-page .text_area {
   height: 300px !important;
 }
@@ -27465,6 +27470,11 @@ page-contact ion-note {
   margin-top: -10px;
 }
 
+page-contact .verified {
+  color: #77c7f7;
+  font-size: 14px;
+}
+
 page-home .pokemon_list {
   padding-left: 5px !important;
 }
@@ -27481,6 +27491,7 @@ page-home .pokemon_list .home_image {
 page-home .pokemon_list img {
   height: 50px;
   width: inherit;
+  max-width: 50px;
   display: inline;
 }
 

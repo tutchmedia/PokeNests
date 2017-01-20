@@ -11,7 +11,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content cache-view="false">
   <ion-segment mode="md" color="primary" [(ngModel)]="innerTab">
     <ion-segment-button value="infoView" (ionSelect)="changePage('showInfo')">
       Info
@@ -45,7 +45,7 @@
   </div>
 
   <!-- Map View -->
-  <div class="map_view" [hidden]="!showMap" >
+  <div class="map_view" [hidden]="!showMap">
     <div #map id="map"></div>
   </div>
 
@@ -59,7 +59,7 @@
         <ion-avatar item-left>
           <img src="{{note.user?.avatar.url}}">
         </ion-avatar>
-        <h2>{{note.user?.username}}</h2>
+        <h2>{{note.user?.username}} <span *ngIf="note.user?.approved==true" class="verified"><ion-icon name="checkmark-circle"></ion-icon></span></h2>
         <p>{{note.comment}}</p>
       </ion-item>
       <div padding>

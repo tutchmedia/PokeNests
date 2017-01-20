@@ -1,25 +1,18 @@
 <ion-header>
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
     <ion-title>Nests</ion-title>
-
     <ion-buttons end>
-      <button ion-button (click)="presentModal()">
-        <ion-icon name="funnel"></ion-icon>
+      <button ion-button (click)="getNests()">
+        <ion-icon name="refresh"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
-
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
   <ion-list>
     <ion-list-header class="home_header">
-      {{location_name}} (12 Days Left)
+      {{location_name}} ({{next_spawn}})
     </ion-list-header>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail class="home_image" item-left>
