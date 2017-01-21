@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content padding class="about-content">
-  <ion-img style="width: 80px; height: 80px; border-radius:40px;" src="{{currentUser.avatar?.url}}"></ion-img>
+  <img style="width: 80px; height: 80px; border-radius:40px;" src="{{currentUser.avatar?.url}}"/>
   <h2>{{currentUser.first_name}} {{currentUser.last_name}} <span *ngIf="currentUser.approved==true" class="verified"><ion-icon name="checkmark-circle"></ion-icon></span></h2>
   <small>You are currently in: {{currentLocation.city}}</small>
 

@@ -42,7 +42,6 @@ export class ContactPage {
     this.item = this.params.get('nest_id');
 
     this.changePage('showInfo');
-    this.innerTab = "infoView";
 
   }
 
@@ -52,15 +51,14 @@ export class ContactPage {
   }
 
 
-
-
   changePage(view) {
     console.log(view);
     if(view == "showMap")
     {
       // Reload the map div
       this.loadTheMap(this.nest);
-
+      console.log(this.mapElement.nativeElement.style.height)
+      this.mapElement.nativeElement.style.height = (this.mapElement.nativeElement.style.height + 1);
       // Show page
       this.showMap = true;
       this.showInfo = false;

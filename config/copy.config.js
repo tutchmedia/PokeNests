@@ -3,7 +3,7 @@
 // then provide an object with a `src` array of globs and a `dest` string
 module.exports = {
   copyAssets: {
-    src: ['{{SRC}}/assets/**/*'],
+    src: ['{{SRC}}/assets/**/*', '{{SRC}}/resources/**/*'],
     dest: '{{WWW}}/assets'
   },
   copyIndexContent: {

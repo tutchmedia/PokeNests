@@ -16,7 +16,7 @@
     <ion-segment-button value="infoView" (ionSelect)="changePage('showInfo')">
       Info
     </ion-segment-button>
-    <ion-segment-button value="mapView" (ionSelect)="changePage('showMap')">
+    <ion-segment-button value="mapView" (ionSelect)="changePage('showMap')" (window:resize)="onResize($event)">
       Map
     </ion-segment-button>
     <ion-segment-button value="notesView" (ionSelect)="changePage('showNotes')">
