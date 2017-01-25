@@ -25,8 +25,6 @@ export class LoginPage {
     this.showLoading()
     this.auth.restLogin(this.registerCredentials.username, this.registerCredentials.password).subscribe(allowed => {
 
-
-
       if (allowed.username) {
 
         this.storage.set('currentUser', allowed);
