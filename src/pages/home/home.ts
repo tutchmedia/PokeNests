@@ -55,6 +55,15 @@ export class HomePage {
     return Math.round(difference_ms/one_day);
   }
 
+  minutesUntilMidnight() {
+      var midnight = new Date();
+      midnight.setHours( 24 );
+      midnight.setMinutes( 0 );
+      midnight.setSeconds( 0 );
+      midnight.setMilliseconds( 0 );
+      return ( midnight.getTime() - new Date().getTime()) / (1000 * 60 * 60);
+  }
+
   getNextSpawn() {
     this.storage.get('settings').then((val) => {
         if(val == null) {
@@ -71,10 +80,14 @@ export class HomePage {
           if(get_days == 1)
           {
             days_text = " day left";
+            this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
+          } else if(get_days == 0) {
+            days_text = " hours left";
+            this.next_spawn = Math.round(this.minutesUntilMidnight())+" "+ days_text;
           } else {
             days_text = " days left";
+            this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
           }
-          this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
         }
      })
   }
