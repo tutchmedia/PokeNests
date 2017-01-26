@@ -27574,9 +27574,16 @@ page-login .login-content .submit-btn {
 }
 
 page-login .login-content .register-btn {
-  margin-top: 40px;
+  margin-top: 20px;
   color: #242633;
   font-size: 0.8em;
+}
+
+page-login .login-content .location-btn {
+  margin-top: 30px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  background-color: #242633;
 }
 
 page-register .register-content {

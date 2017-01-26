@@ -52,7 +52,7 @@ export class HomePage {
     var difference_ms = date2_ms - date1_ms;
 
     // Convert back to days and return
-    return Math.round(difference_ms/one_day);
+    return difference_ms/one_day;
   }
 
   minutesUntilMidnight() {
@@ -77,16 +77,18 @@ export class HomePage {
           let days_text = "";
 
           var get_days = this.daysBetween(today, Jan1st2010);
-          if(get_days == 1)
+          if(Math.round(get_days) == 1)
           {
             days_text = " day left";
-            this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
-          } else if(get_days == 0) {
+            this.next_spawn = Math.round(this.daysBetween(today, Jan1st2010))+" "+ days_text;
+          } else if(Math.round(get_days) == 0 && get_days > 0) {
             days_text = " hours left";
             this.next_spawn = Math.round(this.minutesUntilMidnight())+" "+ days_text;
+          } else if(get_days < 0) {
+            this.next_spawn = "Updating";
           } else {
             days_text = " days left";
-            this.next_spawn = this.daysBetween(today, Jan1st2010)+" "+ days_text;
+            this.next_spawn = Math.round(this.daysBetween(today, Jan1st2010))+" "+ days_text;
           }
         }
      })
@@ -97,6 +99,7 @@ export class HomePage {
     this.storage.get('location').then((val) => {
         if(val == null) {
           console.log("No location set!");
+          this.showPopup("Oops", "It appears that no location has been set. Please select one or create an account.");
           this.location_name = "No location set.";
         } else {
           // Location set, get the data
@@ -133,19 +136,18 @@ export class HomePage {
   }
 
 
-  doRefresh(refresher) {
-     //console.log('Begin async operation', refresher);
-     this.getNests();
-     setTimeout(() => {
-       refresher.complete();
-     }, 2000);
-   }
-
-   showAlert(item) {
+   showPopup(title, text) {
      let alert = this.alertCtrl.create({
-       title: 'Woohoo!',
-       subTitle: 'You selected the title: '+item.pokemon.name,
-       buttons: ['OK']
+       title: title,
+       subTitle: text,
+       buttons: [
+        {
+          text: 'OK',
+          handler: data => {
+
+          }
+        }
+      ]
      });
      alert.present();
    }

@@ -43,7 +43,11 @@ export class AboutPage {
         }
 
         this.storage.get('location').then((val) => {
-          this.currentLocation = val;
+          if(val != null)
+          {
+            this.currentLocation = val;
+          }
+
         });
      });
 

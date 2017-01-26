@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, Loading, ModalController } from 'ionic-angular';
 //import { AuthService } from '../../providers/auth-service';
 import { NestService } from '../../services/NestService';
 import { RegisterPage } from '../register/register';
 import { AboutPage } from '../about/about';
 import { Storage } from '@ionic/storage';
+
+import { LocationPage } from '../location/location';
 
 @Component({
   selector: 'page-login',
@@ -14,8 +16,9 @@ import { Storage } from '@ionic/storage';
 export class LoginPage {
   loading: Loading;
   registerCredentials = {username: '', password: ''};
+  currentLocation = [{}];
 
-  constructor(private nav: NavController, private auth: NestService, private alertCtrl: AlertController, private loadingCtrl: LoadingController, private storage: Storage) {}
+  constructor(private nav: NavController, private auth: NestService, private alertCtrl: AlertController, private loadingCtrl: LoadingController, private storage: Storage, public modalCtrl: ModalController) {}
 
   public createAccount() {
     this.nav.push(RegisterPage);
@@ -47,6 +50,11 @@ export class LoginPage {
       content: 'Please wait...'
     });
     this.loading.present();
+  }
+
+  presentModal() {
+    let modal = this.modalCtrl.create(LocationPage);
+    modal.present();
   }
 
   showError(text) {

@@ -214,17 +214,17 @@ export class NestService {
 
 
 
-    registerUser(username: string, password: string) {
+    registerUser(username: string, password: string, email: string, location: string, first_name: string, last_name: string) {
       let headers = new Headers();
       this.createAuthorizationHeader(headers);
 
-      let p_data = {"username":username, "password":password};
+      let p_data = {"username":username, "password":password, "email": email, "location": {"__type":"Pointer","className":"locations","objectId":location}, "first_name":first_name, "last_name":last_name};
 
       var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/users';
       var response = this.http.post(url, p_data, {
         headers: headers
       })
-      .map(res => res.json());
+      .map((response) => response.json());
 
       return response;
     }

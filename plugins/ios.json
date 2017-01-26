@@ -13,6 +13,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.ionicframework.pokenests238291"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.pokenests238291"
         }
     },
     "dependent_plugins": {

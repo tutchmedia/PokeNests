@@ -32,7 +32,7 @@ export class RegisterPage {
   }
 
   public register() {
-    this.auth.registerUser(this.registerCredentials.username, this.registerCredentials.password).subscribe(success => {
+    this.auth.registerUser(this.registerCredentials.username, this.registerCredentials.password,  this.registerCredentials.email,  this.registerCredentials.location,  this.registerCredentials.firstname, this.registerCredentials.lastname).subscribe(success => {
       console.log(success);
       if (success) {
         this.createSuccess = true;
@@ -45,7 +45,16 @@ export class RegisterPage {
       }
     },
     error => {
-        this.showPopup("Error", error);
+        let data = error.json();
+        if(data.code == 202)
+        {
+          this.showPopup("Username Taken", "Sorry, this username is taken.");
+        } else if(data.code == 203) {
+          this.showPopup("Email Used", "Sorry, it appears this email already has an account.");
+        }  else {
+          this.showPopup("Error", error);
+        }
+
     });
   }
 

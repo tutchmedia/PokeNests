@@ -42,6 +42,10 @@ export class MyApp {
 
 
 
+
+
+
+
       // Get to show for IOS only
       if (platform.is('ios')) {
         let push = Push.init({
