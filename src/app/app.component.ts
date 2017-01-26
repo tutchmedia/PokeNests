@@ -47,10 +47,10 @@ export class MyApp {
 
 
       // Get to show for IOS only
-      if (platform.is('ios')) {
+      if (platform.is('mobile')) {
         let push = Push.init({
               android: {
-                  senderID: "12345679"
+                  senderID: "962497846052"
               },
               ios: {
                   alert: "true",
