@@ -38,10 +38,19 @@ export class LoginPage {
         });
       } else {
         this.showError(allowed.error);
+        this.loading.dismiss();
       }
     },
     error => {
-      this.showError(error);
+      let data = error.json();
+      if(data.code == 101)
+      {
+        this.showPopup("Invalid Credentials", data.error);
+        this.loading.dismiss();
+      } else {
+        this.showPopup("Error", error);
+        this.loading.dismiss();
+      }
     });
   }
 
@@ -55,6 +64,19 @@ export class LoginPage {
   presentModal() {
     let modal = this.modalCtrl.create(LocationPage);
     modal.present();
+  }
+
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+       {
+         text: 'OK'
+       }
+     ]
+    });
+    alert.present();
   }
 
   showError(text) {

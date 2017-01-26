@@ -31,6 +31,7 @@ export class HomePage {
 
 
   ionViewWillEnter() {
+    this.getNextSpawn();
   }
 
   ionViewDidLoad() {
