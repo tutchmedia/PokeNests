@@ -24,7 +24,7 @@ export class LoginPage {
     this.nav.push(RegisterPage);
   }
 
-  public login() {
+  login() {
     this.showLoading()
     this.auth.restLogin(this.registerCredentials.username, this.registerCredentials.password).subscribe(allowed => {
 
