@@ -33,6 +33,8 @@ page-contact {
   #map {
     width: 100%;
     height: 500px;
+    opacity: 0;
+    transition: opacity 150ms ease-in
   }
   ion-note {
     font-size: 11px;
@@ -42,5 +44,11 @@ page-contact {
   .verified {
     color:#77c7f7;
     font-size: 14px;
+  }
+  #map.show-map {
+    opacity: 1;
+  }
+  #map.hide-map {
+    opacity: 0;
   }
 }

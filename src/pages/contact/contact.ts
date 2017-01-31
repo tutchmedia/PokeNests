@@ -11,7 +11,7 @@ import { NestService } from '../../services/NestService';
 // Storage
 import { Storage } from '@ionic/storage';
 
-declare var google;
+declare var google: any;
 
 @Component({
   selector: 'page-contact',
@@ -29,13 +29,13 @@ export class ContactPage {
   checkInText = "people";
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  currentMapCenter = null;
 
   // Default view
   innerTab = "";
   showInfo = true;
   showMap = false;
   showNotes = false;
-
 
   constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
 
@@ -52,13 +52,14 @@ export class ContactPage {
 
 
   changePage(view) {
-    console.log(view);
+
     if(view == "showMap")
     {
       // Reload the map div
       this.loadTheMap(this.nest);
-      console.log(this.mapElement.nativeElement.style.height)
-      this.mapElement.nativeElement.style.height = (this.mapElement.nativeElement.style.height + 1);
+      //google.maps.event.trigger(this.map, 'resize');
+      //console.log(this.mapEleent.nativeElement.style.height)
+      //this.mapElement.nativeElement.style.height = (this.mapElement.nativeElement.style.height + 1);
       // Show page
       this.showMap = true;
       this.showInfo = false;
@@ -95,15 +96,24 @@ export class ContactPage {
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    google.maps.event.trigger(this.mapElement.nativeElement, 'resize');
+    //google.maps.event.trigger(this.mapElement.nativeElement, 'resize');
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    //this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    let mapEle = this.mapElement.nativeElement;
+
+    this.map = new google.maps.Map(mapEle, mapOptions);
+    google.maps.event.trigger(this.map, 'resize');
+    google.maps.event.addListenerOnce(this.map, 'idle', () => {
+      mapEle.classList.add('show-map');
+    });
 
   }
 
   ionViewDidEnter() {
     this.getCheckedIn();
   }
+
 
 
   doCheckIn(checkIn) {
@@ -249,12 +259,33 @@ export class ContactPage {
       });
       alert.present(prompt);
     } else {
-      this.loadMap(data.location.latitude, data.location.longitude);
+      //this.loadMap();
+
+      let latLng = new google.maps.LatLng(data.location.latitude, data.location.longitude);
+
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      let mapEle = this.mapElement.nativeElement;
+
+      this.map = new google.maps.Map(mapEle, mapOptions);
+      //google.maps.event.trigger(this.map, 'resize');
+
 
       let marker = new google.maps.Marker({
         map: this.map,
         animation: google.maps.Animation.DROP,
         position: this.map.getCenter()
+      });
+      this.currentMapCenter = this.map.getCenter();
+
+      google.maps.event.addListenerOnce(this.map, 'idle', () => {
+        mapEle.classList.add('show-map');
+        google.maps.event.trigger(this.map, 'resize');
+        this.map.setCenter(this.currentMapCenter);
       });
 
       let content = "<small>"+ data.location_name +"</small>";
