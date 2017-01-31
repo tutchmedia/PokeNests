@@ -195,23 +195,6 @@ export class NestService {
       return response;
     }
 
-    loginUser(username: string, password: string) {
-      var user = new Parse.User();
-      user.set("username", username);
-      user.set("password", password);
-
-
-      user.logIn(null, {
-        success: function (user) {
-          console.log('success');
-        },
-        error: function (user, error) {
-          // Show the error message somewhere and let the user try again.
-          alert("Error: " + error.code + " " + error.message);
-        }
-      });
-    }
-
 
 
     registerUser(username: string, password: string, email: string, location: string, first_name: string, last_name: string) {

@@ -48,7 +48,7 @@ export class LoginPage {
         this.showPopup("Invalid Credentials", data.error);
         this.loading.dismiss();
       } else {
-        this.showPopup("Error", error);
+        this.showPopup("Error 1", error);
         this.loading.dismiss();
       }
     });

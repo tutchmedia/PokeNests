@@ -31,7 +31,7 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  public register() {
+  register() {
     this.auth.registerUser(this.registerCredentials.username, this.registerCredentials.password,  this.registerCredentials.email,  this.registerCredentials.location,  this.registerCredentials.firstname, this.registerCredentials.lastname).subscribe(success => {
       console.log(success);
       if (success) {
