@@ -50,11 +50,11 @@
     "phonegap-plugin-push": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-push@1.9.2"
+            "id": "phonegap-plugin-push@1.8.2"
         },
         "is_top_level": true,
         "variables": {
-            "SENDER_ID": "XXXXXXXXX"
+            "SENDER_ID": "962497846052"
         }
     },
     "cordova-plugin-app-event": {

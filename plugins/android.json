@@ -9,6 +9,10 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.pokenests238291"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "962497846052",
+            "PACKAGE_NAME": "com.ionicframework.pokenests238291"
         }
     },
     "dependent_plugins": {}

@@ -140,12 +140,18 @@ export class NestService {
 		    return response;
     }
 
-    sendPushInstallation(device_id) {
+    sendPushInstallation(device_id, device_type) {
 
       let headers = new Headers();
       this.createAuthorizationHeader(headers);
 
-      let p_data = {"deviceToken":device_id, "deviceType":"ios", "channels": [""]};
+      if(device_type == "ios") {
+        let p_data = {"deviceToken":device_id, "deviceType":device_type, "channels": [""]};
+      } else {
+        let p_data = {"deviceToken":device_id, "deviceType":device_type, "pushType":"gcm", "GCMSenderId:": "962497846052", "channels": [""]};
+      }
+
+      let p_data = {"deviceToken":device_id, "deviceType":device_type, "channels": [""]};
       var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/installations/';
       var response = this.http.post(url, p_data, {
         headers: headers

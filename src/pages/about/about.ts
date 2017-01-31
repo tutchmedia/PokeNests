@@ -23,7 +23,7 @@ export class AboutPage {
 
     this.storage.get('currentUser').then((val) => {
         if(val == null) {
-          this.nav.setRoot(LoginPage)
+          this.nav.setRoot(LoginPage,{},{animate:false});
           console.log("No user set.");
         } else {
           let checkLogin = this.nestService.getUserInfo(val);
@@ -31,7 +31,7 @@ export class AboutPage {
           if(checkLogin == undefined) {
             console.log("not logged in..");
             //this.nav.push(LoginPage);
-            this.nav.setRoot(LoginPage);
+            this.nav.setRoot(LoginPage,{},{animate:false});
           } else {
             // Do stuff once logged in
             let info = this.nestService.getUserInfo(val);

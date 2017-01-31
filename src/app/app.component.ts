@@ -42,29 +42,34 @@ export class MyApp {
 
 
 
-
-
-
-
       // Get to show for IOS only
-      if (platform.is('mobile')) {
+      if (platform.is('ios') || platform.is('android')) {
         let push = Push.init({
-              android: {
-                  senderID: "962497846052"
-              },
-              ios: {
+          android: {
+              senderID: "962497846052"
+          },
+          ios: {
                   alert: "true",
-                  badge: true,
-                  sound: true
+                  badge: "true",
+                  sound: "true"
               },
               windows: {}
           });
+
+          let plat = null;
+          if(platform.is('ios'))
+          {
+            plat = "ios";
+          } else if(platform.is('android'))
+          {
+            plat = "android";
+          }
 
           push.on('registration', (data) => {
 
               // Send the device id
 
-              this.nestServices.sendPushInstallation(data.registrationId).subscribe(
+              this.nestServices.sendPushInstallation(data.registrationId, plat).subscribe(
                   data => {
 
                       console.log(data.results);

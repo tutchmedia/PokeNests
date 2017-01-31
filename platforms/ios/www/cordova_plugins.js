@@ -57,6 +57,14 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "id": "phonegap-plugin-push.PushNotification",
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "pluginId": "phonegap-plugin-push",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -66,7 +74,8 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "2.4.1",
     "cordova-plugin-network-information": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-whitelist": "1.3.1"
+    "cordova-plugin-whitelist": "1.3.1",
+    "phonegap-plugin-push": "1.9.2"
 };
 // BOTTOM OF METADATA
 });

@@ -23,6 +23,11 @@
 		EB878BCD2EE04F4AB0A14557 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0189F1D088406EBF231AF7 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AC947A0A71DF436B804DF257 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */; };
 		E1F6B00A5DD24036B4C1E35C /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77C105A23D472EB4954D9F /* IonicKeyboard.m */; };
+		7F64D4CFBCDE476BBDAD8FF8 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F9E68EE2D441A895C66AB0 /* AppDelegate+notification.m */; };
+		90E8265C63734309A97F166E /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 513920230C3D4614B6245B6B /* PushPlugin.m */; };
+		9BDF710EC8794D99ADEC2A5C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A847C296AB540EFB575D70B /* AddressBook.framework */; };
+		71CB785A1D2142CE96682F82 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75561FBD7E844A8D9DA016C7 /* libsqlite3.tbd */; };
+		98C5089AE4A847F6B200228A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA58C5D55A412DA942A329 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,13 @@
 		4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		CD77C105A23D472EB4954D9F /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		07C5FFA01CD844319B5A0D1B /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		C1F9E68EE2D441A895C66AB0 /* AppDelegate+notification.m */ = {isa = PBXFileReference; name = "AppDelegate+notification.m"; path = "phonegap-plugin-push/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		513920230C3D4614B6245B6B /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "phonegap-plugin-push/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8846E114634F427E807C9C5F /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9B091D5EDFC349C084FA9363 /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "phonegap-plugin-push/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		1A847C296AB540EFB575D70B /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		75561FBD7E844A8D9DA016C7 /* libsqlite3.tbd */ = {isa = PBXFileReference; name = "libsqlite3.tbd"; path = "usr/lib/libsqlite3.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		D9DA58C5D55A412DA942A329 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,9 @@
 				AE5F420BD5F548C5801CB555 /* CoreLocation.framework in Frameworks */,
 				EB878BCD2EE04F4AB0A14557 /* SystemConfiguration.framework in Frameworks */,
 				AC947A0A71DF436B804DF257 /* CoreTelephony.framework in Frameworks */,
+				9BDF710EC8794D99ADEC2A5C /* AddressBook.framework in Frameworks */,
+				71CB785A1D2142CE96682F82 /* libsqlite3.tbd in Frameworks */,
+				98C5089AE4A847F6B200228A /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +173,9 @@
 				B01CEC14635947F1A8044D5C /* CoreLocation.framework */,
 				9A0189F1D088406EBF231AF7 /* SystemConfiguration.framework */,
 				4F5AE6DDF68744048F1D3B39 /* CoreTelephony.framework */,
+				1A847C296AB540EFB575D70B /* AddressBook.framework */,
+				75561FBD7E844A8D9DA016C7 /* libsqlite3.tbd */,
+				D9DA58C5D55A412DA942A329 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,6 +209,10 @@
 				DA1B0554E70046AAB2F7A252 /* CDVReachability.h */,
 				CD77C105A23D472EB4954D9F /* IonicKeyboard.m */,
 				07C5FFA01CD844319B5A0D1B /* IonicKeyboard.h */,
+				C1F9E68EE2D441A895C66AB0 /* AppDelegate+notification.m */,
+				513920230C3D4614B6245B6B /* PushPlugin.m */,
+				8846E114634F427E807C9C5F /* AppDelegate+notification.h */,
+				9B091D5EDFC349C084FA9363 /* PushPlugin.h */,
 			);
 			name = Plugins;
 			path = "PokeNests/Plugins";
@@ -307,6 +329,8 @@
 				7ED87E7D447746E59FB6ECB0 /* CDVConnection.m in Sources */,
 				F98BB1AC25FF4643A7085FBB /* CDVReachability.m in Sources */,
 				E1F6B00A5DD24036B4C1E35C /* IonicKeyboard.m in Sources */,
+				7F64D4CFBCDE476BBDAD8FF8 /* AppDelegate+notification.m in Sources */,
+				90E8265C63734309A97F166E /* PushPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
