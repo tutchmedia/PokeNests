@@ -26,7 +26,7 @@ export class ContactPage {
   notesuser = [{}];
   pokemon = [{}];
   checkedIn = 0;
-  checkInText = "people";
+  checkInText = "";
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   currentMapCenter = null;
@@ -36,6 +36,7 @@ export class ContactPage {
   showInfo = true;
   showMap = false;
   showNotes = false;
+  doneLoad = false;
 
   constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
 
@@ -212,19 +213,23 @@ export class ContactPage {
       content: 'Please wait...'
     });
 
-    loading.present();
+    //loading.present();
+    this.doneLoad = false;
 
 
     let location_id = this.params.get('nest_id');
       // Do a check againt the value for the time and check it wasn't in the last hour
     this.nestServices.getCheckedIn(location_id).subscribe(
         data => {
-          this.checkedIn = data.results.length;
-          if(this.checkedIn == 1) {
-            this.checkInText = "person has";
-          } else {
-            this.checkInText = "people have";
+          if(this.doneLoad == false) {
+            this.checkedIn = data.results.length;
+            if(this.checkedIn == 1) {
+              this.checkInText = this.checkedIn+" person has been here.";
+            } else {
+              this.checkInText = this.checkedIn+" people have been here.";
+            }
           }
+          this.doneLoad = true;
           console.log(data);
         },
         err => {

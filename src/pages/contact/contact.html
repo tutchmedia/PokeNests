@@ -27,7 +27,7 @@
   <!-- Info View -->
   <div class="info_view" [hidden]="!showInfo">
     <ion-toolbar class="last_nest_change">
-      <ion-title>{{checkedIn}} {{checkInText}} been here.</ion-title>
+      <ion-title><ion-spinner name="dots" [hidden]="doneLoad" paused="{{doneLoad}}"></ion-spinner>{{checkInText}}</ion-title>
     </ion-toolbar>
 
 
