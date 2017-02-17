@@ -37,6 +37,7 @@ export class ContactPage {
   showMap = false;
   showNotes = false;
   doneLoad = false;
+  noteCount = 0;
 
   constructor(public params: NavParams, private nestServices: NestService, private alertController: AlertController, private storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
 
@@ -323,6 +324,7 @@ export class ContactPage {
     this.nestServices.listNestNotes(nest_id).subscribe(
         list => {
             this.notes = list.results;
+            this.noteCount = list.results.length;
         },
         err => {
             console.log(err);

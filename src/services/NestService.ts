@@ -165,7 +165,7 @@ export class NestService {
       let headers = new Headers();
       this.createAuthorizationHeader(headers);
 
-      var query = 'username='+username+'&password='+password+'&include=locations';
+      var query = 'include=locations&username='+username+'&password='+password;
       var url = 'https://pg-app-237jd14w1ijbdxxfdfdhyiea0fy3bh.scalabl.cloud/1/login?'+query;
       var response = this.http.get(url, {
         headers: headers

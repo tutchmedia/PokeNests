@@ -14,6 +14,7 @@
     <ion-list-header class="home_header">
       {{location_name}} ({{next_spawn}})
     </ion-list-header>
+    <div class="alert" *ngIf="globalmessage!='NULL'">{{globalmessage}}</div>
     <ion-item ion-item *ngFor="let nest of nests" (click)="itemSelected(nest)" class="pokemon_list">
       <ion-thumbnail class="home_image" item-left>
         <img src="assets/pokemon/{{nest.pokemon.number}}.png">

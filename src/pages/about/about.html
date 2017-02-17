@@ -20,4 +20,8 @@
 
   <button ion-button full (click)="presentModal()">Change Location</button>
 
+  <hr />
+
+  <button ion-button full (click)="presentNestMenu()" *ngIf="currentUser.username=='turnernator'">Add Nest | Debug</button>
+
 </ion-content>

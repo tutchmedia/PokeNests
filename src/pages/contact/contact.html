@@ -55,6 +55,7 @@
       <ion-list-header class="home_header">
         User Notes
       </ion-list-header>
+      <ion-title class="padding" [hidden]="noteCount">No notes have been posted. Why not add your own?</ion-title>
       <ion-item ion-item *ngFor="let note of notes; let i = index">
         <ion-avatar item-left>
           <img src="{{note.user?.avatar.url}}">

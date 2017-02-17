@@ -21,6 +21,7 @@ export class HomePage {
   location_name = "";
   location = [{}];
   next_spawn = "";
+  globalmessage = "";
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private nestServices: NestService, public modalCtrl: ModalController,public storage: Storage) {
 
@@ -39,6 +40,16 @@ export class HomePage {
 
     // Get the next spawn
     this.getNextSpawn();
+
+    // If a global message is live, display it!
+    this.getGlobalMessage();
+  }
+
+  getGlobalMessage() {
+    this.storage.get('settings').then((val) => {
+      this.globalmessage = val.params.global_message;
+
+    });
   }
 
   daysBetween( date1, date2 ) {
@@ -86,7 +97,7 @@ export class HomePage {
             days_text = " hours left";
             this.next_spawn = Math.round(this.minutesUntilMidnight())+" "+ days_text;
           } else if(get_days < 0) {
-            this.next_spawn = "Updating";
+            this.next_spawn = "Only a few hours left!";
           } else {
             days_text = " days left";
             this.next_spawn = Math.round(this.daysBetween(today, Jan1st2010))+" "+ days_text;

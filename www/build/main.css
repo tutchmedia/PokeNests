@@ -27530,6 +27530,16 @@ page-home .refresh_icon {
   font-size: 22px;
 }
 
+page-home .alert {
+  padding: 10px 5px;
+  background-color: #ff6961;
+  color: #ffffff;
+}
+
+page-home .list-header-md {
+  margin-bottom: 0px;
+}
+
 page-login .login-content {
   background: #fdc23e;
 }

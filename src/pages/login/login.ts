@@ -34,7 +34,8 @@ export class LoginPage {
 
         setTimeout(() => {
           this.loading.dismiss();
-          this.nav.setRoot(AboutPage)
+          this.nav.setRoot(AboutPage);
+          this.presentModal();
         });
       } else {
         this.showError(allowed.error);
